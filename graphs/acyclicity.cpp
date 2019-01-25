@@ -1,0 +1,72 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+const int N = 100100;
+int start, finish, col[N], path[N];
+vector<int> g[N];
+
+bool dfs(int v)                // directed graph
+{
+	col[v] = 1;
+	for (int i = 0; i < g[v].size(); i++)
+	{
+		int to = g[v][i];
+		if (col[to] == 1)
+		{
+			start = to;
+			finish = v;
+			return true;
+		}
+		else if (!col[to])
+		{
+			path[to] = v;
+			if (dfs(to))
+				return true;
+		}
+	}
+	col[v] = 2;
+	return false;
+}
+
+bool dfs(int v, int from)      // undirected graph
+{
+	col[v] = 1;
+	for (int i = 0; i < g[v].size(); i++)
+	{
+		int to = g[v][i];
+		if (col[to] == 1 && to != from)
+		{
+			start = to;
+			finish = v;
+			return true; 
+		}
+		else if (!col[to])
+		{
+			path[to] = v;
+			if (dfs(to, v))
+				return true;
+		}
+	}
+	col[v] = 2;
+	return false;
+}
+
+void print()
+{
+	cout << "Cycle found!\n";
+	vector<int> ans;
+	for (int v = finish; v != start; v = path[v])
+		ans.push_back(v);
+	ans.push_back(start);
+	for (int i = ans.size() - 1; i >= 0; i--)
+		cout << ans[i] << ' ';
+	exit(0);
+}
+
+int main()
+{
+	for (int i = 1; i <= N; i++)
+		if (!col[i] && dfs(i, -1))
+			print();
+	cout << "Acyclic";
+}
