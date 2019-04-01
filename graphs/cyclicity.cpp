@@ -54,12 +54,12 @@ bool dfs(int v, int from)      // undirected graph
 void print()
 {
 	cout << "Cycle found!\n";
-	vector<int> ans;
+	vector<int> cycle;
 	for (int v = finish; v != start; v = path[v])
-		ans.push_back(v);
-	ans.push_back(start);
-	for (int i = ans.size() - 1; i >= 0; i--)
-		cout << ans[i] << ' ';
+		cycle.push_back(v);
+	cycle.push_back(start);
+	for (int i = cycle.size() - 1; i >= 0; i--)
+		cout << cycle[i] << ' ';
 	exit(0);
 }
 

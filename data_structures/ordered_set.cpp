@@ -18,30 +18,6 @@ int main()
             cin >> x;
             s.insert(x);
         }
-        else if (c == "begin")
-            cout << *s.begin() << endl;
-        else if (c == "end")
-            cout << *s.rbegin() << endl;
-        else if (c == "print")
-        {
-            for (int i: s)
-                cout << i << ' ';
-            cout << endl;
-        }
-        else if (c == "lb")
-        {
-            int x;
-            cin >> x;
-            auto it = s.lower_bound(x);
-            cout << *it << endl;
-        }
-        else if (c == "ub")
-        {
-            int x;
-            cin >> x;
-            auto it = s.upper_bound(x);
-            cout << *it << endl;
-        }
         else if (c == "find")
         {
             int x;

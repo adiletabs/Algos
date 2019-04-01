@@ -33,3 +33,8 @@ void MST()
 		}
 	}
 }
+
+int main()
+{
+
+}

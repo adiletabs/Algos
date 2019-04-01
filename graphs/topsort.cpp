@@ -2,7 +2,7 @@
 using namespace std;
 
 const int N = 100100;
-vector<int> g[N], ans;
+vector<int> g[N], order;
 bool used[N];
 
 // check for acyclicity
@@ -16,7 +16,7 @@ void dfs(int v)
 		if (!used[to])
 			dfs(to);
 	}
-	ans.push_back(v);
+	order.push_back(v);
 }
 
 void top_sort()
@@ -24,5 +24,5 @@ void top_sort()
 	for (int i = 0; i < n; i++)
 		if (!used[i])
 			dfs(i);
-	reverse(ans.begin(), ans.end());
+	reverse(order.begin(), order.end());
 }
