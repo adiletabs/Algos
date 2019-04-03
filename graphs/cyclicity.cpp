@@ -65,6 +65,7 @@ void print()
 
 int main()
 {
+	// reading graph
 	for (int i = 1; i <= N; i++)
 		if (!col[i] && dfs(i, -1))
 			print();

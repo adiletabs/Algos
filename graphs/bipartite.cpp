@@ -19,3 +19,12 @@ bool dfs(int v, int cl)
 	}
 	return true;
 }
+
+int main()
+{
+	// reading graph
+	for (int i = 1; i <= n; i++)
+		if (!col[i] && !dfs(i))
+			return cout << "Not bipartite", 0;
+	cout << "Bipartite";
+}

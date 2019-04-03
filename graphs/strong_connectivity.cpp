@@ -57,13 +57,6 @@ void go()
 
 int main()
 {
-	cin >> n >> m;
-	while (m--)
-	{
-		int a, b;
-		cin >> a >> b;
-		g[a].push_back(b);
-		gr[b].push_back(a);
-	}
+	// reading gpaph
 	go();
 }

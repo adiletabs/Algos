@@ -6,7 +6,7 @@ vector<int> g[N];
 int tin[N], fup[N], timer;
 bool used[N];
 
-void dfs (int v, int p = -1) {
+void dfs(int v, int p = -1) {
 	used[v] = true;
 	tin[v] = fup[v] = timer++;
 	for (int i = 0; i < g[v].size(); i++) 
