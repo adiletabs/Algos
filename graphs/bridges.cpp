@@ -27,7 +27,7 @@ void dfs(int v, int p = -1) {
 
 int main()
 {
-	// reading graph
+	// read graph
 	for (int i = 1; i <= n; i++)
 		if (!used[i])
 			dfs(i);

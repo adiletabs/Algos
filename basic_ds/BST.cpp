@@ -171,8 +171,7 @@ class BST
 		void print(string mode) 
 		{
 			for (int i = 0; i < mode.size(); i++)
-				if (mode[i] <= 'Z')
-					mode[i] = mode[i] + 32;
+				mode[i] = tolower(mode[i]);
 
 			if (mode == "branches")
 				printBranches(root);

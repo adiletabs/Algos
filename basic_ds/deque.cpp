@@ -95,7 +95,7 @@ int main()
 				cout << ";(";
 			else
 				cout << dq.front();
-			cout << endl;
+			cout << '\n';
 		}
 		else if (s == "back")
 		{
@@ -103,7 +103,7 @@ int main()
 				cout << ";(";
 			else
 				cout << dq.back();
-			cout << endl;
+			cout << '\n';
 		}
 		else
 			dq.reverse();

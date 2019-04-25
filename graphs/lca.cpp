@@ -40,13 +40,14 @@ int main()
 	int n, m;            // number of vertices and edges
 	cin >> n >> m;
 	while ((1 << l) <= n)  l++;
-	// reading graph
+	// read graph
 	dfs(root);
-	while (true)
+	int q;
+	cin >> q;
+	while (q--)
 	{
 		int x, y;
 		cin >> x >> y;
-		if (x == -1 && y == -1) break;
 		cout << lca(x, y) << '\n';
 	}
 }

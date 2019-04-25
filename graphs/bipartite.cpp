@@ -22,7 +22,7 @@ bool dfs(int v, int cl)
 
 int main()
 {
-	// reading graph
+	// read graph
 	for (int i = 1; i <= n; i++)
 		if (!col[i] && !dfs(i))
 			return cout << "Not bipartite", 0;

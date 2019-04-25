@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Manacher's algorithm - find all subpalindromes of a string
+
 vector<int> odds(string s)    // number of palindromes of odd 
 {                             // length with center at i-th symbol
 	int n = (int)s.length();

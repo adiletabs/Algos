@@ -48,8 +48,8 @@ long long unique_subs(string s)
 	return res;
 }
 
-// squeezed representation of the string
-string squeezed(string s)
+// compressed representation of the string
+string compress(string s)
 {
 	vector<int> pi = prefix_function(s);
 	int n = (int)s.length();

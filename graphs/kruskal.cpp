@@ -36,5 +36,9 @@ void MST()
 
 int main()
 {
-
+	// read graph
+	MST();
+	printf("MST weight: %d\n", weight);
+	for (pair<int, int> p: mst_edges)
+		cout << p.first << ' ' << p.second << '\n';
 }

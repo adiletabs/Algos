@@ -27,7 +27,7 @@ bool dfs(int v)
 
 int main()
 {
-	// reading graph
+	// read graph
 	// check for bipartite
 	// put vertices of one part in vector p
 	memset(mt, -1, sizeof mt);

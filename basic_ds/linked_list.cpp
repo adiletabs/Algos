@@ -17,7 +17,7 @@ struct LinkedList
 {
 	public:
 		Node *head, *tail;
-
+		
 		LinkedList() { head = tail = nullptr; }
 
 		int cnt(int x)

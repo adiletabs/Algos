@@ -57,6 +57,6 @@ void go()
 
 int main()
 {
-	// reading gpaph
+	// read gpaph
 	go();
 }
