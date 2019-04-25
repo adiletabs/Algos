@@ -1,6 +1,6 @@
-## Find me
+## Find me on websites
 Codeforces: Adilet_ 
 
-AtCoder: Adilet 
+AtCoder: Adilet_ 
 
 ## README to be updated
