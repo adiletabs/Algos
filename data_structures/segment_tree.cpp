@@ -43,7 +43,7 @@ struct segment_tree
 		}
 		else
 		{
-			int tm = tl + tm >> 1;
+			int tm = tl + tr >> 1;
 			if (pos <= tm) 
 				upd(pos, x, v + v, tl, tm);
 			else 
@@ -97,7 +97,7 @@ int main()
 		{
 			int pos, x;
 			cin >> pos >> x;
-			T.upd(pos, x)
+			T.upd(pos, x);
 		}
 		else if (com == "add")
 		{
