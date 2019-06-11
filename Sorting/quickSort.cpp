@@ -10,9 +10,9 @@ void qksort(int l, int r)
 	int i = l, j = r;
 	while (i <= j)
 	{
-		while (a[i] < piv)
+		while (i <= r && a[i] < piv)
 			i++;
-		while (a[j] > piv)
+		while (j >= l && a[j] > piv)
 			j--;
 		if (i >= j)
 			break;
