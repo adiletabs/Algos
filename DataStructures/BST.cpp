@@ -62,13 +62,15 @@ class BST
 
 		Node<T>* insert(T x, Node<T>* t, int level = 1) 
 		{
-			if (t == nullptr) {
+			if (t == nullptr) 
+			{
 				t = new Node<T>(x, level);
 				size++;
 				t->increaseCounter();
 				height = max(height, level);
 			}
-			else {
+			else 
+			{
 				if (x < t->value)
 					t->left = insert(x, t->left, level + 1);
 				else if (x > t->value)
@@ -172,7 +174,6 @@ class BST
 		{
 			for (int i = 0; i < mode.size(); i++)
 				mode[i] = tolower(mode[i]);
-
 			if (mode == "branches")
 				printBranches(root);
 			else if (mode == "leaves")

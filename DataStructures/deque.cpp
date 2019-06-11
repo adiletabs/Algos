@@ -5,7 +5,7 @@ struct Node
 {
 	int value;
 	Node *prev;
-	Node(int x)
+	Node(int x) 
 	{
 		value = x;
 		prev = nullptr;
@@ -73,23 +73,23 @@ int main()
 {
 	DEQUE dq;
 	cin >> q;
-	while (q--)
+	while (q--) 
 	{
 		string s;
 		cin >> s;
-		if (s == "push_back")
+		if (s == "push_back") 
 		{
 			int n;
 			cin >> n;
 			dq.push_back(n);
 		}
-		else if (s == "push_front")
+		else if (s == "push_front") 
 		{
 			int n;
 			cin >> n;
 			dq.push_front(n);
 		}
-		else if (s == "front")
+		else if (s == "front") 
 		{
 			if (dq.empty())
 				cout << ";(";
@@ -97,7 +97,7 @@ int main()
 				cout << dq.front();
 			cout << '\n';
 		}
-		else if (s == "back")
+		else if (s == "back") 
 		{
 			if (dq.empty())
 				cout << ";(";
@@ -105,7 +105,6 @@ int main()
 				cout << dq.back();
 			cout << '\n';
 		}
-		else
-			dq.reverse();
+		else if (s == "reverse") dq.reverse();
 	}
 }
