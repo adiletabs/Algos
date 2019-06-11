@@ -8,7 +8,8 @@ const int mod = 1e9 + 7;
 long long binpow(long long a, long long n)
 {
 	long long res = 1;
-	while (n) {
+	while (n) 
+	{
 		if (n & 1) res = (res * a) % mod;
 		a = (a * a) % mod;
 		n >>= 1;
