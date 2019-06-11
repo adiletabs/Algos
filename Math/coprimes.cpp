@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// based on  Euler’s Totient Function
+
 typedef long long ll;
 
 const int N = 100100;   // calc() calculates ans[i] - 

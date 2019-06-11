@@ -3,11 +3,13 @@ using namespace std;
 
 // compute n-th Fibonacci number modulo mod in O(logn)
 
+typedef long long ll;
+
 const int Sz = 2;
 const int mod = 1e9 + 7;
 
 struct Matrix {
-	long long mat[Sz][Sz];
+	ll mat[Sz][Sz];
 };
 
 Matrix mult(Matrix a, Matrix b)
@@ -19,7 +21,7 @@ Matrix mult(Matrix a, Matrix b)
 			res.mat[i][j] = 0;
 			for (int k = 0; k < Sz; k++)
 			{
-				long long plus = (a.mat[i][k] * b.mat[k][j]) % mod;
+				ll plus = (a.mat[i][k] * b.mat[k][j]) % mod;
 				res.mat[i][j] += plus;
 				res.mat[i][j] %= mod;
 			}
@@ -36,7 +38,7 @@ Matrix unit()
 	return res;
 }
 
-Matrix binpow(Matrix base, long long n)
+Matrix binpow(Matrix base, ll n)
 {
 	Matrix res = unit();
 	while (n)
@@ -48,7 +50,7 @@ Matrix binpow(Matrix base, long long n)
 	return res;
 }
 
-long long get_fibonacci(long long n)
+ll get_fibonacci(ll n)
 {
 	Matrix P;
 	for (int i = 0; i < Sz; i++)
@@ -60,7 +62,7 @@ long long get_fibonacci(long long n)
 
 int main()
 {
-	long long n;
+	ll n;
 	cin >> n;
 	cout << get_fibonacci(n);
 }

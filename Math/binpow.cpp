@@ -3,11 +3,13 @@ using namespace std;
 
 // compute a^n modulo mod in O(logn)
 
+typedef long long ll;
+
 const int mod = 1e9 + 7;
 
-long long binpow(long long a, long long n)
+ll binpow(ll a, ll n)
 {
-	long long res = 1;
+	ll res = 1;
 	while (n) 
 	{
 		if (n & 1) res = (res * a) % mod;
@@ -19,7 +21,7 @@ long long binpow(long long a, long long n)
 
 int main()
 {
-	long long a, n;
+	ll a, n;
 	cin >> a >> n;
 	cout << binpow(a, n); 
 }
