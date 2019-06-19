@@ -1,24 +1,61 @@
+/*----------------------------------------------------
+
+Compute C[n][k] modulo mod - the number of possible
+combinations of k objects from a set of n objects
+
+1st method: Precalc based on Pascal's triangle
+Preprocessing - O(N^2) 
+Access to any element - O(1)
+
+2nd method: binary exponentiation with mod inverse
+Factorials calculation - O(N)
+Getting C[n][k] - O(logN)
+
+----------------------------------------------------*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
-const int N = 5000, mod = 1e9 + 7;
-long long C[N][N];
+typedef long long ll;
 
-void get_combinations()         // precalc with Pascal's triangle
-{                               // time complexity - N^2    
-	for (int i = 0; i < N; i++) 
-	{
+const int mod = 1e9 + 7;
+const int N = 5000;
+
+ll C[N][N], f[N];
+
+void pascal_precalc()            
+{                                   
+	for (int i = 0; i < N; i++)    
+	{                              
 		C[i][0] = 1, C[i][i] = 1;
 		for (int j = 1; j < i; j++)
 			C[i][j] = (C[i - 1][j - 1] + C[i - 1][j]) % mod;
 	}
 }
 
-long long c(int n, int k)       // for small values of n
-{                               // unable to calculate combinations modulo m
-	long long res = 1;
-	for (int i = n - k + 1; i <= n; i++)
-		res *= i;
-	for (int i = 2; i <= k; i++)
-		res /= i;
+void factorial_precalc()
+{
+	f[0] = 1;
+	for (int i = 1; i < N; i++)
+		f[i] = f[i - 1] * 1LL * i; 
+}
+
+ll binpow(ll a, ll n)
+{
+	ll res = 1;
+	while (n) 
+	{
+		if (n & 1) res = (res * a) % mod;
+		a = (a * a) % mod;
+		n >>= 1;
+	}
+	return res;
+}
+
+ll c(int n, int k)       
+{                        
+	ll res = f[n];
+	res = (res * binpow(f[k], mod - 2)) % mod;
+	res = (res * binpow(f[n - k], mod - 2)) % mod;
+	return res;
 }

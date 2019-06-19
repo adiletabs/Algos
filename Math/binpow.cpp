@@ -1,7 +1,14 @@
+/*--------------------------------
+
+Binary exponentiation algorithm
+
+Compute a^N modulo mod 
+Time complexity - O(logN)
+
+--------------------------------*/
+
 #include <bits/stdc++.h>
 using namespace std;
-
-// compute a^n modulo mod in O(logn)
 
 typedef long long ll;
 
@@ -21,7 +28,11 @@ ll binpow(ll a, ll n)
 
 int main()
 {
-	ll a, n;
-	cin >> a >> n;
-	cout << binpow(a, n); 
+	int T;
+	cin >> T;
+	while (T--) {
+		ll a, n;
+		cin >> a >> n;
+		cout << binpow(a, n) << '\n'; 
+	}
 }

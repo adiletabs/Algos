@@ -1,3 +1,11 @@
+/*-------------------------
+
+Bubble-sort algorithm
+
+Time complexity - O(N^2)
+
+-------------------------*/
+
 #include <bits/stdc++.h>
 using namespace std;
 

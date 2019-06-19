@@ -1,8 +1,20 @@
+/*--------------------------------------
+
+Classical binary search algorithm
+
+Checks wether number x is in the array
+Requres array to be sorted
+
+Time complexity - O(logN)
+
+--------------------------------------*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
+const int N = 100100;
+
 int a[N];
-//sort array
 
 bool binsearch(int l, int r, int x)
 {

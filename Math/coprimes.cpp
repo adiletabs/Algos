@@ -1,13 +1,21 @@
+/*--------------------------------------
+
+calc() function calculates ans[i] - 
+number of unordered co-prime pairs
+in range [1, i] for any i in [1, N)
+
+Based on  Euler’s Totient Function
+
+--------------------------------------*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
-// based on  Euler’s Totient Function
-
 typedef long long ll;
 
-const int N = 100100;   // calc() calculates ans[i] - 
-ll phi[N], ans[N];      // number of unordered co-prime pairs
-                        // in range [1, i] for any i in [1, N)
+const int N = 100100;   
+ll phi[N], ans[N];      
+                        
 void calc()            
 {                       
     for (ll i = 1; i < N; i++) 
@@ -23,4 +31,15 @@ void calc()
     }  
     for (ll i = 1; i < N; i++) 
         ans[i] = ans[i - 1] + phi[i]; 
+}
+
+int main()
+{
+    int T;
+    cin >> T;
+    while (T--) {
+        int l, r;
+        cin >> l >> r;
+        cout << ans[r] - ans[l - 1] << '\n';
+    }
 }

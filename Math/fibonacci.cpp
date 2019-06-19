@@ -1,7 +1,14 @@
+/*-----------------------------------------
+
+Compute N-th Fibonacci number modulo mod 
+using matrix exponentiation technique
+
+Time complexity - O(logN)
+
+-----------------------------------------*/
+
 #include <bits/stdc++.h>
 using namespace std;
-
-// compute n-th Fibonacci number modulo mod in O(logn)
 
 typedef long long ll;
 
@@ -62,7 +69,11 @@ ll get_fibonacci(ll n)
 
 int main()
 {
-	ll n;
-	cin >> n;
-	cout << get_fibonacci(n);
+	int T;
+	cin >> T;
+	while (T--) {
+		ll n;
+		cin >> n;
+		cout << get_fibonacci(n) << '\n';
+	}
 }

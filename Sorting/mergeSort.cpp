@@ -1,3 +1,11 @@
+/*-------------------------
+
+Merge-sort algorithm
+
+Time complexity - O(logN)
+
+-------------------------*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -31,10 +39,11 @@ void MergeSort(int l, int r)
 }
 
 int main()
-{   cin >> n;
+{   
+    cin >> n;
     for (int i = 0; i < n; i++)
         cin >> a[i];
     MergeSort(0, n - 1);
-    for (int i= 0; i < n; i++)
+    for (int i = 0; i < n; i++)
         cout << a[i] << ' ';
 }

@@ -1,3 +1,13 @@
+/*--------------------------------------------------------------
+
+Shanks' algorithm for computing the discrete logarithm
+More known as 'baby-step giant-step' algorithm
+
+Finds any solution of a^x = b (mod m), where a, b, m are given
+Time complexity - O(sqrt(m))
+
+--------------------------------------------------------------*/
+
 #include <bits/stdc++.h>
 using namespace std;
 

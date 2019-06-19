@@ -1,3 +1,12 @@
+/*----------------------------------------------
+
+Sieve of Eratosthenes 
+for finding all prime numbers in range [2, n]
+
+Time complexity - O(NloglogN)
+
+----------------------------------------------*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -5,11 +14,11 @@ typedef long long ll;
 
 vector<ll> primes;
 
-void resheto(ll n)
+void sieve(ll n)
 {
 	if (n >= 2)
 		primes.push_back(2);
-	vector<char> prime (n + 1, true);
+	vector<bool> prime (n + 1, true);
 	for (ll i = 3; i <= n; i += 2)
 	{
 		if (prime[i])

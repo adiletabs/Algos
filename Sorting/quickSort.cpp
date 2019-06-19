@@ -1,3 +1,11 @@
+/*-------------------------
+
+Quick-sort algorithm
+
+Time complexity - O(logN)
+
+-------------------------*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -24,3 +32,13 @@ void qksort(int l, int r)
   		qksort(j + 1, r);
     }
 } 
+
+int main()
+{   
+	cin >> n;
+    for (int i = 0; i < n; i++)
+        cin >> a[i];
+    qksort(0, n - 1);
+    for (int i = 0; i < n; i++)
+        cout << a[i] << ' ';
+}

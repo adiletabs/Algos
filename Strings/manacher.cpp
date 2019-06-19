@@ -1,10 +1,28 @@
+/*
+
+Manacher's algorithm 
+Finds all subpalindromes of a string
+
+odds(string s) function return vector v, where
+v[i] is number of palindromes of  
+odd length with center at i-th symbol
+
+evens(string s) function return vector v, where
+v[i] is number of palindromes of  
+odd length with center at (i-0.5)-th symbol
+
+get_palindromes(string s) function returns
+vector of all subpalinromes of string s
+
+Time complexity - O(N)
+
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
-// Manacher's algorithm - find all subpalindromes of a string
-
-vector<int> odds(string s)    // number of palindromes of odd 
-{                             // length with center at i-th symbol
+vector<int> odds(string s)    
+{                             
 	int n = (int)s.length();
 	vector<int> d (n);
 	int l = 0, r = -1;
@@ -19,8 +37,8 @@ vector<int> odds(string s)    // number of palindromes of odd
 	return d;
 }
 
-vector<int> evens(string s)  // number of palindromes of even
-{                            // length with center at (i-0.5)-th symbol
+vector<int> evens(string s)  
+{                           
 	int n = (int)s.length();
 	vector<int> d (n);
 	int l = 0, r = -1;
