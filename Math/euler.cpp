@@ -10,7 +10,7 @@ get_phi(N) function
 Time complexity - O(sqrt(N))
 
 2nd method: precalculation for all numbers up to given N
-Time complexity - O(n)
+Time complexity - O(Nloglog(N))
 Access to phi[i] - O(1)
 
 ---------------------------------------------------------*/
