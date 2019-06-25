@@ -12,34 +12,36 @@ struct Node
 	}
 };
 
-struct STACK
+struct Queue 
 {
 	private:
 		Node *head = nullptr;
+		Node *tail = nullptr;
 		int cnt = 0;
 	public:
 		void push(int x)
 		{
-			Node * node = new Node(x);
-			node->prev = head;
-			head = node;
+			Node *node = new Node(x);
+			if (cnt == 0)
+				head = node;
+			else
+				tail->prev = node;
+			tail = node;
 			cnt++;
 		}
 
-		int back() { return head->value; }
+		int front() { return head->value; }
 
 		void pop()
 		{
-			if (cnt == 1)
-				head = nullptr;
-			else
-				head = head->prev;
+			head = head->prev;
 			cnt--;
 		}
 
 		void clear()
 		{
 			head = nullptr;
+			tail = nullptr;
 			cnt = 0;
 		}
 
@@ -50,7 +52,7 @@ struct STACK
 
 int main()
 {
-	STACK st;
+	Queue q;
 	string s;
 	while (true)
 	{
@@ -59,21 +61,21 @@ int main()
 		{
 			int n;
 			cin >> n;
-			st.push(n);
+			q.push(n);
 			cout << "ok\n";
 		}
 		else if (s == "pop")
 		{
-			cout << st.back() << endl;
-			st.pop();
+			cout << q.front() << endl;
+			q.pop();
 		}
-		else if (s == "back")
-			cout << st.back() << endl;
+		else if (s == "front")
+			cout << q.front() << endl;
 		else if (s == "size")
-			cout << st.size() << endl;
+			cout << q.size() << endl;
 		else if (s == "clear")
 		{
-			st.clear();
+			q.clear();
 			cout << "ok\n";
 		}
 		else
