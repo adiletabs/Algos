@@ -1,6 +1,6 @@
 /*----------------------------------------------------
 
-Compute C[n][k] modulo mod - the number of possible
+Computation C[n][k] modulo mod - the number of possible
 combinations of k objects from a set of n objects
 
 1st method: Precalc based on Pascal's triangle

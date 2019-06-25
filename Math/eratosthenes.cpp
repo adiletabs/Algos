@@ -1,6 +1,6 @@
 /*----------------------------------------------
 
-Sieve of Eratosthenes 
+Sieve of Eratosthenes algorithm
 for finding all prime numbers in range [2, n]
 
 Time complexity - O(NloglogN)

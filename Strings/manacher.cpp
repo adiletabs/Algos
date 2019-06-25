@@ -1,4 +1,4 @@
-/*
+/*-----------------------------------------------
 
 Manacher's algorithm 
 Finds all subpalindromes of a string
@@ -16,7 +16,7 @@ vector of all subpalinromes of string s
 
 Time complexity - O(N)
 
-*/
+-----------------------------------------------*/
 
 #include <bits/stdc++.h>
 using namespace std;

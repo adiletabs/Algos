@@ -1,6 +1,6 @@
 /*-----------------------------------------
 
-Compute N-th Fibonacci number modulo mod 
+Computation of N-th Fibonacci number modulo mod 
 using matrix exponentiation technique
 
 Time complexity - O(logN)
