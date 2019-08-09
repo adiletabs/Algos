@@ -35,6 +35,7 @@ void calc()
 
 int main()
 {
+    calc();
     int T;
     cin >> T;
     while (T--) {
