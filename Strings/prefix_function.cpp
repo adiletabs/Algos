@@ -38,7 +38,7 @@ long long unique_subs(string s)
 	{
 		t += s[i];
 		reverse(t.begin(), t.end());
-		vector<int> pi = prefix_function(nt);
+		vector<int> pi = prefix_function(t);
 		long long mx = 0;
 		for (int j = 0; j < pi.size(); j++)
 			mx = max(mx, pi[j]);
