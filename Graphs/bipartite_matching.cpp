@@ -5,7 +5,7 @@ const int N = 160;
 int used[N], mt[N], tmr, ans;
 vector<int> g[N], p;
 
-bool dfs(int v) 
+bool kuhn(int v) 
 {
     if (used[v] == tmr)
         return false;
@@ -29,11 +29,9 @@ int main()
 	// check for bipartite
 	// put vertices of one part in vector p
 	memset(mt, -1, sizeof mt);
-	for (int to: p)
-	{
+	for (int to: p) {
 		tmr++;
-		if (dfs(i))
-			ans++;
+		if (kuhn(i)) ans++;
 	}
 	cout << ans;  // ans - maximum bipartite matching
 }
