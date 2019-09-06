@@ -11,14 +11,12 @@ bool dfs(int v)
         return false;
     used[v] = tmr;
     for (int to: g[v]) 
-        if (mt[to] == -1) 
-        {
+        if (mt[to] == -1) {
             mt[to] = v;
             return true;
         }   
     for (int to: g[v]) 
-        if (kuhn(mt[to])) 
-        {
+        if (kuhn(mt[to])) {
             mt[to] = v;
             return true;
         } 
