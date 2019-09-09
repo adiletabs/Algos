@@ -5,22 +5,19 @@ const int N = 100100;
 vector<int> g[N];
 int tin[N], fup[N], timer;
 bool used[N];
+vector<pair<int, int> > bridges;
 
 void dfs(int v, int p = -1) {
 	used[v] = true;
 	tin[v] = fup[v] = timer++;
-	for (int i = 0; i < g[v].size(); i++) 
-	{
-		int to = g[v][i];
+	for (int to: g[v]) {
 		if (to == p)  continue;
-		if (used[to])
-			fup[v] = min(fup[v], tin[to]);
-		else 
-		{
+		if (used[to]) fup[v] = min(fup[v], tin[to]);
+		else {
 			dfs(to, v);
 			fup[v] = min(fup[v], fup[to]);
 			if (fup[to] > tin[v])
-				// edge [v, to] is a bridge, do some action
+				bridges.push_back(make_pair(v, to));
 		}
 	}
 }
