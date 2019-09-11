@@ -13,8 +13,7 @@ void calc()
 		logs[i] = logs[i >> 1] + 1;
 	for (int i = 0; i < n; i++)
 		table[i][0] = a[i];
-	for (int i = 1; i <= logs[n]; i++)
-	{
+	for (int i = 1; i <= logs[n]; i++) {
 		int len = 1 << i;
 		for (int j = 0; j + len <= n; j++)
 			table[j][i] = min(table[j][i - 1], table[j + (len >> 1)][i - 1]);
@@ -36,8 +35,7 @@ int main()
 	calc();
 	int q;
 	cin >> q;
-	while (q--)
-	{
+	while (q--) {
 		int l, r;
 		cin >> l >> r;
 		l--, r--;
