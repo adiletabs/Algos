@@ -7,8 +7,7 @@ int a[N], n, q;
 struct segment_tree
 {
 	int t[N << 2], to[N << 2];
-	segment_tree()
-	{
+	segment_tree() {
 		memset(t, 0, sizeof t);
 		memset(t, 0, sizeof to);
 	}
@@ -16,8 +15,7 @@ struct segment_tree
 	{
 		if (tl == tr)
 			t[v] = a[tl];
-		else
-		{
+		else {
 			int tm = tl + tr >> 1;
 			build(v + v, tl, tm);
 			build(v + v + 1, tm + 1, tr);
@@ -36,13 +34,10 @@ struct segment_tree
 	}
 	void upd(int pos, int x, int v = 1, int tl = 1, int tr = n)
 	{
-		if (tl == tr) 
-		{
+		if (tl == tr) {
 			t[v] = x;
 			a[pos] = x;
-		}
-		else
-		{
+		} else {
 			int tm = tl + tr >> 1;
 			if (pos <= tm) 
 				upd(pos, x, v + v, tl, tm);
@@ -60,8 +55,7 @@ struct segment_tree
 	void add(int l, int r, int val, int v = 1, int tl = 1, int tr = n)
 	{
 		if (l > r) return;
-		if (tl == l && tr == r)
-		{
+		if (tl == l && tr == r) {
 			t[v] += val;
 			to[v] += val;
 			return;
@@ -83,24 +77,18 @@ int main()
 		cin >> a[i];
 	T.build();
 	cin >> q;
-	while (q--)
-	{
+	while (q--) {
 		string com;
 		cin >> com;
-		if (com == "get")
-		{
+		if (com == "get") {
 			int l, r;
 			cin >> l >> r;
 			cout << T.get(l, r) << '\n';
-		}
-		else if (com == "upd")
-		{
+		} else if (com == "upd") {
 			int pos, x;
 			cin >> pos >> x;
 			T.upd(pos, x);
-		}
-		else if (com == "add")
-		{
+		} else if (com == "add") {
 			int l, r, x;
 			cin >> l >> r >> x;
 			T.add(l, r, x);
