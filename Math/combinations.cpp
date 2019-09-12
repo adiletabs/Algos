@@ -25,8 +25,7 @@ ll C[N][N], f[N];
 
 void pascal_precalc()            
 {                                   
-	for (int i = 0; i < N; i++)    
-	{                              
+	for (int i = 0; i < N; i++) {                              
 		C[i][0] = 1, C[i][i] = 1;
 		for (int j = 1; j < i; j++)
 			C[i][j] = (C[i - 1][j - 1] + C[i - 1][j]) % mod;
@@ -43,8 +42,7 @@ void factorial_precalc()
 ll binpow(ll a, ll n)
 {
 	ll res = 1;
-	while (n) 
-	{
+	while (n) {
 		if (n & 1) res = (res * a) % mod;
 		a = (a * a) % mod;
 		n >>= 1;
