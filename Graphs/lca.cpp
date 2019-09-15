@@ -11,18 +11,16 @@ void dfs(int v, int p = 0)
 	up[v][0] = p;
 	for (int i = 1; i <= l; i++)
 		up[v][i] = up[up[v][i - 1]][i - 1];
-	for (int i = 0; i < g[v].size(); i++)
-	{
+	for (int i = 0; i < g[v].size(); i++) {
 		int to = g[v][i];
-		if (to != p)
-			dfs(to, v);
+		if (to != p) dfs(to, v);
 	}
 	time_out[v] = ++timer;
 }
 
 bool is_ancestor(int v, int u)
 {
-	return (time_in[v] < time_in[u] && time_out[v] > time_out[u]);
+	return (time_in[v] <= time_in[u] && time_out[v] >= time_out[u]);
 }
 
 int lca(int v, int u)
@@ -44,8 +42,7 @@ int main()
 	dfs(root);
 	int q;
 	cin >> q;
-	while (q--)
-	{
+	while (q--) {
 		int x, y;
 		cin >> x >> y;
 		cout << lca(x, y) << '\n';
