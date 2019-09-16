@@ -22,11 +22,9 @@ void merge(int a, int b)
 void MST()
 {
 	sort(g.begin(), g.end());
-	for (int i = 0; i < g.size(); i++)
-	{
+	for (int i = 0; i < g.size(); i++) {
 		int a = g[i].second.first, b = g[i].second.second;
-		if (get_set(a) != get_set(b))
-		{
+		if (get_set(a) != get_set(b)) {
 			weight += g[i].first;
 			mst_edges.push_back(make_pair(a, b));
 			merge(a, b);
