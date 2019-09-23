@@ -1,6 +1,9 @@
-## Find me on websites
-Codeforces: Adilet_ 
+## Find me on competitive programming platforms
 
-AtCoder: Adilet_ 
+[Codeforces](https://codeforces.com/profile/Adilet_)
 
-## README to be updated
+[Timus](http://acm.timus.ru/author.aspx?id=242235)
+
+[ACMP](http://acmp.ru/?main=user&id=210237)
+
+#### README to be updated
