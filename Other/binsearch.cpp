@@ -31,8 +31,7 @@ bool binsearch(int l, int r, int x)
 
 bool binsearch(int l, int r, int x)
 {
-	while (l <= r)
-	{
+	while (l <= r) {
 		int mid = l + r >> 1;
 		if (a[mid] == x)
 			return true;
