@@ -1,10 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> prefix_function(string s)
+typedef long long ll;
+
+vector<ll> prefix_function(string s)
 {
 	int n = (int)s.length();
-	vector<int> pi (n);
+	vector<ll> pi (n);
 	for (int i = 1; i < n; i++)
 	{
 		int j = pi[i - 1];
@@ -30,15 +32,15 @@ vector<int> KMP(string s, string t)
 }
 
 // number of different substrings
-long long unique_subs(string s)
+ll unique_subs(string s)
 {
-	long long res = 0;
+	ll res = 0;
 	string t = "";
 	for (int i = 0; i < s.length(); i++)
 	{
 		t += s[i];
 		reverse(t.begin(), t.end());
-		vector<int> pi = prefix_function(nt);
+		vector<ll> pi = prefix_function(t);
 		long long mx = 0;
 		for (int j = 0; j < pi.size(); j++)
 			mx = max(mx, pi[j]);
