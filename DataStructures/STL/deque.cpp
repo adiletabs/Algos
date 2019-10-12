@@ -5,8 +5,7 @@ struct Node
 {
 	int value;
 	Node *prev;
-	Node(int x) 
-	{
+	Node(int x) {
 		value = x;
 		prev = nullptr;
 	}
@@ -19,8 +18,7 @@ struct DEQUE
 		Node *tail = nullptr;
 		int cnt = 0;
 	public:
-		void push_back(int x)
-		{
+		void push_back(int x) {
 			Node *node = new Node(x);
 			if (cnt == 0)
 				head = node;
@@ -30,8 +28,7 @@ struct DEQUE
 			cnt++;
 		}
 
-		void push_front(int x)
-		{
+		void push_front(int x) {
 			Node *node = new Node(x);
 			if (cnt == 0)
 				head = node;
@@ -45,20 +42,17 @@ struct DEQUE
 
 		int front() { return head->value; }
 
-		void pop_back()
-		{
+		void pop_back() {
 			tail = tail->prev;
 			cnt--;
 		}
 
-		void pop_front()
-		{
+		void pop_front() {
 			head = head->prev;
 			cnt--;
 		}
 
-		void reverse() 
-		{
+		void reverse() {
 			Node * el = head;
 			head = tail;
 			tail = el;
@@ -73,38 +67,25 @@ int main()
 {
 	DEQUE dq;
 	cin >> q;
-	while (q--) 
-	{
+	while (q--) {
 		string s;
 		cin >> s;
-		if (s == "push_back") 
-		{
+		if (s == "push_back") {
 			int n;
 			cin >> n;
 			dq.push_back(n);
-		}
-		else if (s == "push_front") 
-		{
+		} else if (s == "push_front") {
 			int n;
 			cin >> n;
 			dq.push_front(n);
-		}
-		else if (s == "front") 
-		{
-			if (dq.empty())
-				cout << ";(";
-			else
-				cout << dq.front();
+		} else if (s == "front") {
+			if (dq.empty()) cout << ";(";
+			else cout << dq.front();
 			cout << '\n';
-		}
-		else if (s == "back") 
-		{
-			if (dq.empty())
-				cout << ";(";
-			else
-				cout << dq.back();
+		} else if (s == "back") {
+			if (dq.empty()) cout << ";(";
+			else cout << dq.back();
 			cout << '\n';
-		}
-		else if (s == "reverse") dq.reverse();
+		} else if (s == "reverse") dq.reverse();
 	}
 }

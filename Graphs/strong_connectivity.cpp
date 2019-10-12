@@ -10,9 +10,7 @@ bool used[N];
 void dfs1(int v)
 {
 	used[v] = true;
-	for (int i = 0; i < g[v].size(); i++)
-	{
-		int to = g[v][i];
+	for (int to: g[v]) {
 		if (!used[to])
 			dfs1(to);
 	}
@@ -31,9 +29,7 @@ void dfs2(int v)
 {
 	used[v] = true;
 	comp.push_back(v);
-	for (int i = 0; i < g[v].size(); i++)
-	{
-		int to = g[v][i];
+	for (int to: gr[v]) {
 		if (!used[to])
 			dfs2(to);
 	}
@@ -43,11 +39,9 @@ void go()
 {
 	top_sort();
 	memset(used, 0, sizeof used);
-	for (int i = 0; i < n; i++)
-	{
+	for (int i = 0; i < n; i++) {
 		int v = order[i];
-		if (!used[v])
-		{
+		if (!used[v]) {
 			comp.clear();
 			dfs2(v);
 			strong_comps.push_back(comp);
@@ -57,6 +51,12 @@ void go()
 
 int main()
 {
-	// read gpaph
+	cin >> n >> m;
+	while (m--) {
+		int x, y;
+		cin >> x >> y;
+		g[x].push_back(y);
+		gr[y].push_back(x);
+	}
 	go();
 }

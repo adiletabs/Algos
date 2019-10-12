@@ -23,11 +23,9 @@ Matrix mult(Matrix a, Matrix b)
 {
 	Matrix res;
 	for (int i = 0; i < Sz; i++)
-		for (int j = 0; j < Sz; j++)
-		{
+		for (int j = 0; j < Sz; j++) {
 			res.mat[i][j] = 0;
-			for (int k = 0; k < Sz; k++)
-			{
+			for (int k = 0; k < Sz; k++) {
 				ll plus = (a.mat[i][k] * b.mat[k][j]) % mod;
 				res.mat[i][j] += plus;
 				res.mat[i][j] %= mod;
@@ -48,8 +46,7 @@ Matrix unit()
 Matrix binpow(Matrix base, ll n)
 {
 	Matrix res = unit();
-	while (n)
-	{
+	while (n) {
 		if (n & 1) res = mult(res, base);
 		base = mult(base, base);
 		n >>= 1;

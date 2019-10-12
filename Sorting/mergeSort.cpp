@@ -16,8 +16,7 @@ void Merge(int l, int r)
 {
     int cur[r - l + 1], mid = l + r >> 1;
     int i = l, j = mid + 1, k = 0;
-    while (i <= mid && j <= r) 
-    {
+    while (i <= mid && j <= r) {
         if (a[i] < a[j]) cur[k++] = a[i++];
         else cur[k++] = a[j++];
     }
@@ -29,8 +28,7 @@ void Merge(int l, int r)
  
 void MergeSort(int l, int r) 
 {
-    if (l < r) 
-    {
+    if (l < r) {
         int mid = l + r >> 1;
         MergeSort(l, mid);
         MergeSort(mid + 1, r);

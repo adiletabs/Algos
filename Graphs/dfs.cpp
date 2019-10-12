@@ -10,11 +10,8 @@ void dfs(int v)
 {
 	used[v] = true;
 	time_in[v] = ++timer;
-	for (int i = 0; i < g[v].size(); i++)
-	{
-		int to = g[v][i];
+	for (int to: g[v]) 
 		if (!used[to])
 			dfs(to);
-	}
 	time_out[v] = ++timer;
 }

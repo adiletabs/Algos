@@ -18,10 +18,8 @@ void factorization(long long n)
 {
 	primes.clear();
 	long long i = 2;
-	while (i * i <= n)
-	{
-		if (n % i == 0)
-		{
+	while (i * i <= n) {
+		if (n % i == 0) {
 			primes[i]++;
 			n /= i;
 		}

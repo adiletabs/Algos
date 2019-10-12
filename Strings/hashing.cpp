@@ -23,15 +23,13 @@ vector<int> rabin_karp(string s, string t)
 {
 	int n = s.length(), m = t.length();
 	vector<long long> h (n);
-	for (int i = 0; i < n; i++)
-	{
+	for (int i = 0; i < n; i++) {
 		h[i] = (s[i] - 'a' + 1) * pows[i];
 		if (i) h[i] += h[i - 1];
 	}
 	long long hash_t = hashof(t);
 	vector<int> res;
-	for (int i = 0; i <= n - m; i++)
-	{
+	for (int i = 0; i <= n - m; i++) {
 		long long hash_s = h[i + m - 1];
 		if (i) hash_s -= h[i - 1];
 		if (hash_t * pows[i] == hash_s)

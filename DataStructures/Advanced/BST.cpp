@@ -13,8 +13,7 @@ class Node
 		int cnt;
 		int subtree_size;
 
-		Node (T x = 0, int _level = 0) 
-		{
+		Node (T x = 0, int _level = 0) {
 			value = x;
 			level = _level;
 			height = 1;
@@ -26,8 +25,7 @@ class Node
 
 		void increaseCounter() { cnt++; }
 
-		void updSubtreeSize() 
-		{
+		void updSubtreeSize() {
 			int size = 1;
 			if (this->left != nullptr)
 				size += this->left->subtree_size;
@@ -36,8 +34,7 @@ class Node
 			this->subtree_size = size;
 		}
 
-		void updHeight() 
-		{
+		void updHeight() {
 			if (this->left != nullptr)
 				height = max(height, this->left->height + 1);
 			if (this->right != nullptr)
@@ -53,24 +50,19 @@ class BST
 		int height;
 		int size;
 
-		BST() 
-		{
+		BST() {
 			root = nullptr;
 			height = 0;
 			size = 0;
 		}
 
-		Node<T>* insert(T x, Node<T>* t, int level = 1) 
-		{
-			if (t == nullptr) 
-			{
+		Node<T>* insert(T x, Node<T>* t, int level = 1) {
+			if (t == nullptr) {
 				t = new Node<T>(x, level);
 				size++;
 				t->increaseCounter();
 				height = max(height, level);
-			}
-			else 
-			{
+			} else {
 				if (x < t->value)
 					t->left = insert(x, t->left, level + 1);
 				else if (x > t->value)
@@ -87,22 +79,19 @@ class BST
 
 		int getSize() { return size; }
 
-		Node<T>* getKth(int k, Node<T>* t) 
-		{
+		Node<T>* getKth(int k, Node<T>* t) {
 			int size_left = t->left == nullptr ? 0 : t->left->subtree_size;
 			if (size_left == k - 1)
 				return t;
 			return k <= size_left ? getKth(k, t->left) : getKth(k - size_left - 1, t->right);
 		}
 
-		int getKth(int k) 
-		{
+		int getKth(int k) {
 			Node<T>* t = getKth(k, root);
 			return t->value;
 		}
 
-		bool isLeaf(T x, Node<T>* t) 
-		{
+		bool isLeaf(T x, Node<T>* t) {
 			if (t->value == x)
 				return t->left == nullptr && t->right == nullptr;
 			if (x < t->value)
@@ -115,8 +104,7 @@ class BST
 
 		bool isLeaf(T x) { return isLeaf(x, root); }
 
-		bool isBalanced(Node<T>* t) 
-		{
+		bool isBalanced(Node<T>* t) {
 			if (t == nullptr)
 				return true;
 			int height_left = t->left == nullptr ? 0 : t->left->height;
@@ -128,50 +116,43 @@ class BST
 
 		bool isBalanced() { return isBalanced(root); }
 
-		void printBranches(Node<T>* t) 
-		{  
-	        if (t->left != nullptr) printBranches(t->left);
-	        if ((t->left != nullptr) ^ (t->right != nullptr)) cout << t->value << endl;
-	        if (t->right != nullptr) printBranches(t->right);
-	    }
+		void printBranches(Node<T>* t) {  
+	        	if (t->left != nullptr) printBranches(t->left);
+	        	if ((t->left != nullptr) ^ (t->right != nullptr)) cout << t->value << endl;
+	        	if (t->right != nullptr) printBranches(t->right);
+	    	}
 
-		void printLeaves(Node<T>* t) 
-		{
+		void printLeaves(Node<T>* t) {
 			if (t->left != nullptr) printLeaves(t->left);
-	        if (t->left == nullptr && t->right == nullptr) cout << t->value << endl;
-	        if (t->right != nullptr) printLeaves(t->right);
+	        	if (t->left == nullptr && t->right == nullptr) cout << t->value << endl;
+	        	if (t->right != nullptr) printLeaves(t->right);
 		}
 
-		void printJunctions(Node<T>* t) 
-		{ 
-	        if (t->left != nullptr) printJunctions(t->left);
-	        if (t->left != nullptr && t->right != nullptr) cout << t->value << endl;
-	        if (t->right != nullptr) printJunctions(t->right);
-	    }
+		void printJunctions(Node<T>* t) { 
+			if (t->left != nullptr) printJunctions(t->left);
+			if (t->left != nullptr && t->right != nullptr) cout << t->value << endl;
+			if (t->right != nullptr) printJunctions(t->right);
+	    	}
 
-		void inOrder(Node<T>* t) 
-		{
+		void inOrder(Node<T>* t) {
 			if (t->left != nullptr) inOrder(t->left);
 			cout << t->value << endl;
 			if (t->right != nullptr) inOrder(t->right);
 		}
 
-		void preOrder(Node<T>* t) 
-		{   
+		void preOrder(Node<T>* t) {   
 			cout << t->value << endl;
 			if (t->left != nullptr) inOrder(t->left);
 			if (t->right != nullptr) inOrder(t->right);
 		}
 
-		void postOrder(Node<T>* t) 
-		{  
+		void postOrder(Node<T>* t) {  
 			if (t->left != nullptr) inOrder(t->left);
 			if (t->right != nullptr) inOrder(t->right);
 			cout << t->value << endl;
 		}
 
-		void print(string mode) 
-		{
+		void print(string mode) {
 			for (int i = 0; i < mode.size(); i++)
 				mode[i] = tolower(mode[i]);
 			if (mode == "branches")
@@ -193,8 +174,7 @@ int main()
 {
 	BST<int> tree;
 	int x;
-    while (cin >> x) 
-    {
+    while (cin >> x) {
         if (x == 0) break;
         tree.insert(x);
     }

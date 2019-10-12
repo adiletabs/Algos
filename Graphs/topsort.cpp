@@ -8,9 +8,7 @@ bool used[N];
 void dfs(int v)
 {
 	used[v] = true;
-	for (int i = 0; i < g[v].size(); i++)
-	{
-		int to = g[v][i];
+	for (int to: g[v]) {
 		if (!used[to])
 			dfs(to);
 	}

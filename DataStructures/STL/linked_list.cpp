@@ -5,8 +5,7 @@ struct Node
 {
 	int val;
 	Node *next, *prev;
-	Node(int _val)
-	{
+	Node(int _val) {
 		val = _val;
 		next = nullptr;
 		prev = nullptr;
@@ -20,12 +19,10 @@ struct LinkedList
 		
 		LinkedList() { head = tail = nullptr; }
 
-		int cnt(int x)
-		{
+		int cnt(int x) {
 			int cnt = 0;
 			auto cur = head;
-			while (cur)
-			{
+			while (cur) {
 				if (cur->val == x)
 					cnt++;
 				cur = cur->next;
@@ -33,50 +30,40 @@ struct LinkedList
 			return cnt;
 		}
 
-		int getNth(int n)
-		{
+		int getNth(int n) {
 			auto cur = head;
 			while (n-- && cur)
 				cur = cur->next;
 			return cur ? cur->val : -1;
 		}
 
-		void insertLast(int x)
-		{
+		void insertLast(int x) {
 			auto node = new Node(x);
-			if (tail == nullptr)
-			{
+			if (tail == nullptr) {
 				head = node;
 				tail = node;
 				return;
-			}
-			else
-			{
+			} else {
 				tail->next = node;
 				node->prev = tail;
 				tail = node;
 			}
 		}
 
-		void insertFirst(int x)
-		{
+		void insertFirst(int x) {
 			auto node = new Node(x);
-			if (head == nullptr)
-			{
+			if (head == nullptr) {
 				head = node;
 				tail = node;
 				return;
-			}
-			else
-			{
+			} else {
 				head->prev = node;
 				node->next = head;
 				head = node;
 			}
 		}
 
-		void deleteFirst()
-		{
+		void deleteFirst() {
 			head = head->next;
 			if (head != nullptr)
 				head->prev = nullptr;
@@ -84,8 +71,7 @@ struct LinkedList
 				tail = nullptr;
 		}
 
-		void deleteLast()
-		{
+		void deleteLast() {
 			tail = tail->prev;
 			if (tail != nullptr)
 				tail->next = nullptr;
@@ -93,8 +79,7 @@ struct LinkedList
 				head = nullptr;
 		}
 
-		void del(int x)
-		{
+		void del(int x) {
 			auto cur = head;
 			while (cur && cur->val != x)
 				cur=cur->next;
@@ -111,11 +96,9 @@ struct LinkedList
 			}
 		}
 
-		void print()
-		{
+		void print() {
 			auto cur = head;
-			while (cur)
-			{
+			while (cur) {
 				if (cur != head)
 					cout << ' ';
 				cout << cur->val;
@@ -130,36 +113,26 @@ int main()
 	int n, x;
 	auto ll = new LinkedList();
 	cin >> n;
-	while (n--)
-	{
+	while (n--) {
 		string s;
 		cin >> s;
-		if (s == "insertFirst")
-		{
+		if (s == "insertFirst") {
 			cin >> x;
 			ll->insertFirst(x);
-		}
-		else if (s == "delete")
-		{
+		} else if (s == "delete") {
 			cin >> x;
 			ll->del(x);
-		}
-		else if (s == "deleteFirst")
+		} else if (s == "deleteFirst")
 			ll->deleteFirst();
-		if (s == "deleteLast")
+		else if (s == "deleteLast")
 			ll->deleteLast();
-		else if (s == "insertLast")
-		{
+		else if (s == "insertLast") {
 			cin >> x;
 			ll->insertLast(x);
-		}
-		else if (s == "cnt")
-		{
+		} else if (s == "cnt") {
 			cin >> x;
 			cout << ll->cnt(x) << '\n';
-		}
-		else if (s == "getNth")
-		{
+		} else if (s == "getNth") {
 			cin >> x;
 			cout << ll->getNth(x) << '\n';
 		}

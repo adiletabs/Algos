@@ -16,8 +16,7 @@ void qksort(int l, int r)
 {
 	int piv = a[(l + r) / 2];
 	int i = l, j = r;
-	while (i <= j)
-	{
+	while (i <= j) {
 		while (i <= r && a[i] < piv)
 			i++;
 		while (j >= l && a[j] > piv)
@@ -26,16 +25,15 @@ void qksort(int l, int r)
 			break;
 		swap(a[i++], a[j--]);
 	}
-  	if (l < r)
-  	{
+  	if (l < r) {
   		qksort(l, j);
   		qksort(j + 1, r);
-    }
+    	}
 } 
 
 int main()
 {   
-	cin >> n;
+    cin >> n;
     for (int i = 0; i < n; i++)
         cin >> a[i];
     qksort(0, n - 1);

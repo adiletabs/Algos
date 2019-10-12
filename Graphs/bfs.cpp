@@ -6,22 +6,17 @@ vector<int> g[N];
 
 void bfs(int v)
 {
-	bool used[N];
+	vector<bool> used(N);
 	used[v] = true;
 	queue<int> q;
 	q.push(v);
-	while (!q.empty())
-	{
+	while (!q.empty()) {
 		int u = q.front();
 		q.pop();
-		for (int i = 0; i < g[u].size(); i++)
-		{
-			int to = g[u][i];
-			if (!used[to])
-			{
+		for (int to: g[u]) 
+			if (!used[to]) {
 				used[to] = true;
 				q.push(to);
 			} 
-		}
 	}
 }

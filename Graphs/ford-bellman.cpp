@@ -25,8 +25,7 @@ int main()
 	for (int i = 0; i < N; i++)
 		path[i] = inf;
 	cin >> n >> m;
-	for (int i = 0; i < m; i++)
-	{
+	for (int i = 0; i < m; i++) {
 		int x, y, c;
 		cin >> x >> y >> c;
 		g.push_back({x, y, c});

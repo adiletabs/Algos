@@ -10,25 +10,13 @@ int main()
 {
     ordered_set<int> s;
     string c;
-    while (cin >> c)
-    {
+    int x;
+    while (cin >> c >> x) {
         if (c == "insert") 
-        {
-            int x;
-            cin >> x;
             s.insert(x);
-        }
-        else if (c == "find")
-        {
-            int x;
-            cin >> x;
-            cout << *s.find_by_order(x) << endl;
-        }
-        else if (c == "order")
-        {
-            int x;
-            cin >> x;
-            cout << s.order_of_key(x) << endl;
-        }
+        else if (c == "find") 
+            cout << *s.find_by_order(x) << '\n';
+        else if (c == "order") 
+            cout << s.order_of_key(x) << '\n';
     }
 }

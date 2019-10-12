@@ -8,17 +8,13 @@ vector<int> g[N];
 bool dfs(int v)                // directed graph
 {
 	col[v] = 1;
-	for (int i = 0; i < g[v].size(); i++)
-	{
-		int to = g[v][i];
-		if (col[to] == 1)
-		{
+	for (int to: g[v]) {
+		if (col[to] == 1) {
 			start = to;
 			finish = v;
 			return true;
 		}
-		else if (!col[to])
-		{
+		else if (!col[to]) {
 			path[to] = v;
 			if (dfs(to))
 				return true;
@@ -31,17 +27,12 @@ bool dfs(int v)                // directed graph
 bool dfs(int v, int from)      // undirected graph
 {
 	col[v] = 1;
-	for (int i = 0; i < g[v].size(); i++)
-	{
-		int to = g[v][i];
-		if (col[to] == 1 && to != from)
-		{
+	for (int to: g[v]) {
+		if (col[to] == 1 && to != from) {
 			start = to;
 			finish = v;
 			return true; 
-		}
-		else if (!col[to])
-		{
+		} else if (!col[to]) {
 			path[to] = v;
 			if (dfs(to, v))
 				return true;
@@ -58,8 +49,8 @@ void print()
 	for (int v = finish; v != start; v = path[v])
 		cycle.push_back(v);
 	cycle.push_back(start);
-	for (int i = cycle.size() - 1; i >= 0; i--)
-		cout << cycle[i] << ' ';
+	reverse(cycle.begin(), cycle.end());
+	for (int i: cycle) cout << i << ' ';
 	exit(0);
 }
 
