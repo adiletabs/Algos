@@ -45,7 +45,7 @@ void calc()
         if (phi[p] == p) { 
             phi[p] = p - 1; 
             for (int i = 2 * p; i < N; i += p) 
-                phi[i] = (phi[i] / p) * (p - 1); 
+                phi[i] -= phi[i] / p; 
         } 
     }  
 }

@@ -2,6 +2,7 @@
 using namespace std;
 
 const int N = 100100;
+
 vector<pair<int, pair<int, int > > > g;
 vector<pair<int, int > > mst_edges;
 int par[N], weight;

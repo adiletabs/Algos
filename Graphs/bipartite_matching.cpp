@@ -29,7 +29,7 @@ int main()
 	// check for bipartite
 	// put vertices of one part in vector p
 	memset(mt, -1, sizeof mt);
-	for (int to: p) {
+	for (int i: p) {
 		tmr++;
 		if (kuhn(i)) ans++;
 	}
