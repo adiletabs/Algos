@@ -61,7 +61,7 @@ int main()
 		cin >> command >> s;
 		if (command == "insert") trie->insert(s);
 		else if (command == "find") {
-			if (trie->find_string(s)) cout << "found!\n";
+			if (trie->find_string(s)) cout << "found\n";
 			else cout << "not found\n";
 		}
 	}
