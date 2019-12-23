@@ -2,7 +2,8 @@
 
 Merge-sort algorithm
 
-Time complexity - O(logN)
+Time complexity - O(NlogN)
+Additional space complexity - O(N)
 
 -------------------------*/
 
@@ -12,7 +13,7 @@ using namespace std;
 const int N = 100100;
 int a[N], n;
  
-void Merge(int l, int r) 
+void merge(int l, int r) 
 {
     int cur[r - l + 1], mid = l + r >> 1;
     int i = l, j = mid + 1, k = 0;
@@ -26,13 +27,13 @@ void Merge(int l, int r)
         a[i] = cur[i - l];
 }
  
-void MergeSort(int l, int r) 
+void mergeSort(int l, int r) 
 {
     if (l < r) {
         int mid = l + r >> 1;
-        MergeSort(l, mid);
-        MergeSort(mid + 1, r);
-        Merge(l, r);
+        mergeSort(l, mid);
+        mergeSort(mid + 1, r);
+        merge(l, r);
     }
 }
 
@@ -41,7 +42,7 @@ int main()
     cin >> n;
     for (int i = 0; i < n; i++)
         cin >> a[i];
-    MergeSort(0, n - 1);
+    mergeSort(0, n - 1);
     for (int i = 0; i < n; i++)
         cout << a[i] << ' ';
 }

@@ -3,6 +3,7 @@
 Bubble-sort algorithm
 
 Time complexity - O(N^2)
+Additional space complexity - O(1)
 
 -------------------------*/
 

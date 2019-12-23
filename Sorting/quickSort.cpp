@@ -2,7 +2,8 @@
 
 Quick-sort algorithm
 
-Time complexity - O(logN)
+Time complexity - O(NlogN)
+Additional space complexity - O(1)
 
 -------------------------*/
 
@@ -12,7 +13,7 @@ using namespace std;
 const int N = 5000;
 int a[N];
 
-void qksort(int l, int r)
+void quickSort(int l, int r)
 {
 	int piv = a[(l + r) / 2];
 	int i = l, j = r;
@@ -26,9 +27,9 @@ void qksort(int l, int r)
 		swap(a[i++], a[j--]);
 	}
   	if (l < r) {
-  		qksort(l, j);
-  		qksort(j + 1, r);
-    	}
+  		quickSort(l, j);
+  		quickSort(j + 1, r);
+    }
 } 
 
 int main()
@@ -36,7 +37,7 @@ int main()
     cin >> n;
     for (int i = 0; i < n; i++)
         cin >> a[i];
-    qksort(0, n - 1);
+    quickSort(0, n - 1);
     for (int i = 0; i < n; i++)
         cout << a[i] << ' ';
 }
