@@ -1,4 +1,4 @@
-/*--------------------------------------
+/*--------------------------------------------
 
 Ternary search algorithm
 
@@ -11,7 +11,7 @@ finding the minimum value is symmetrical
 
 Time complexity - O(log(2/3)N)
 
---------------------------------------*/
+--------------------------------------------*/
 
 #include <bits/stdc++.h>
 using namespace std;

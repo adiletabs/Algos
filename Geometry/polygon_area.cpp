@@ -1,3 +1,10 @@
+/*---------------------------------------------------
+
+Given: vector of coordinates of points of a polygon
+Find: polygon area
+
+---------------------------------------------------*/
+
 #include <bits/stdc++.h>
 using namespace std;
 

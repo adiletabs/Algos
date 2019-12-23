@@ -16,20 +16,7 @@ const int N = 100100;
 
 int a[N];
 
-bool binsearch(int l, int r, int x)
-{
-	if (l > r)
-		return false;
-	int mid = l + r >> 1;
-	if (a[mid] == x)
-		return true;
-	else if (a[mid] < x)
-		binsearch(mid + 1, r, x);
-	else if (a[mid] > x)
-		binsearch(l, mid - 1, x);
-}
-
-bool binsearch(int l, int r, int x)
+bool binary_search(int l, int r, int x)
 {
 	while (l <= r) {
 		int mid = l + r >> 1;
