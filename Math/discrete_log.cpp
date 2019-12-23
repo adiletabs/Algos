@@ -26,7 +26,7 @@ ll binpow(ll a, ll n)
 	return res;
 }
 
-ll shanks_log(ll a, ll b)
+ll discr_log(ll a, ll b)
 {
 	ll n = (ll)sqrt(mod * 1.0) + 1;
 	ll an = binpow(a, n);
@@ -54,6 +54,6 @@ int main()
 	while (T--) {
 		ll a, b;
 		cin >> a >> b;
-		cout << shanks_log(a, b) << '\n';
+		cout << discr_log(a, b) << '\n';
 	}
 }
