@@ -1,11 +1,11 @@
-/*-------------------------
+/*----------------------------------
 
 Merge-sort algorithm
 
 Time complexity - O(NlogN)
 Additional space complexity - O(N)
 
--------------------------*/
+----------------------------------*/
 
 #include <bits/stdc++.h>
 using namespace std;

@@ -1,11 +1,11 @@
-/*-------------------------
+/*----------------------------------
 
 Bubble-sort algorithm
 
 Time complexity - O(N^2)
 Additional space complexity - O(1)
 
--------------------------*/
+----------------------------------*/
 
 #include <bits/stdc++.h>
 using namespace std;

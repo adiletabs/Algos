@@ -1,11 +1,11 @@
-/*-------------------------
+/*----------------------------------
 
 Quick-sort algorithm
 
 Time complexity - O(NlogN)
 Additional space complexity - O(1)
 
--------------------------*/
+----------------------------------*/
 
 #include <bits/stdc++.h>
 using namespace std;
