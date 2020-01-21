@@ -1,11 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Node 
-{
-    public:
-	    bool is_terminal;
-	    Node *son[26];
+class Node {
+public:
+	bool is_terminal;
+	Node *son[26];
 
     Node() {
         is_terminal = false;
@@ -15,8 +14,17 @@ class Node
 };
 
 class Trie {
-    public:
-   		Node *root;
+private:
+	bool is_empty(Node* node) 
+    { 
+        for (int i = 0; i < 26; i++) 
+            if (node->son[i]) 
+                return false; 
+        return true; 
+    }
+
+public:
+	Node *root;
 
     Trie() {
         root = new Node();
@@ -52,14 +60,6 @@ class Trie {
             cur = cur->son[ind];
         }
         return true;
-    }
-
-    bool is_empty(Node* node) 
-    { 
-        for (int i = 0; i < 26; i++) 
-            if (node->son[i]) 
-                return false; 
-        return true; 
     } 
 
     Node* remove(string &word, Node* node, int depth = 0) 
