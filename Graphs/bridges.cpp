@@ -7,7 +7,8 @@ int tin[N], fup[N], timer;
 bool used[N];
 vector<pair<int, int> > bridges;
 
-void dfs(int v, int p = -1) {
+void dfs(int v, int p = -1) 
+{
 	used[v] = true;
 	tin[v] = fup[v] = timer++;
 	for (int to: g[v]) {
