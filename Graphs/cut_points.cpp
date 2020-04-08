@@ -4,7 +4,7 @@ using namespace std;
 const int N = 100100;
 
 vector<int> g[N], cut_points;
-int tin[N], fup[N], timer;
+int n, tin[N], fup[N], timer;
 bool used[N];
 
 void dfs(int v, int p = -1)
@@ -14,7 +14,7 @@ void dfs(int v, int p = -1)
 	int children = 0;
 	for (int to: g[v]) {
 		if (to == p) continue;
-		if (!used[to]) fup[v] = min(fup[v], tin[to]);
+		if (used[to]) fup[v] = min(fup[v], tin[to]);
 		else {
 			dfs(to, v);
 			fup[v] = min(fup[v], fup[to]);

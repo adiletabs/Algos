@@ -12,18 +12,18 @@ Time complexity - O(sqrt(N))
 #include <bits/stdc++.h>
 using namespace std;
 
-map<ll, int> primes;
+typedef long long ll;
 
-void factorization(long long n)
+unordered_map<ll, int> primes;
+
+void fact(ll n)
 {
 	primes.clear();
-	long long i = 2;
-	while (i * i <= n) {
-		if (n % i == 0) {
+	for (ll i = 2; i * i <= n; i++) {
+		while (n % i == 0) {
 			primes[i]++;
 			n /= i;
 		}
-		else i++;
 	}
-	primes[n]++;
+	if (n > 1) primes[n]++;
 }

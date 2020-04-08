@@ -9,7 +9,7 @@ Access to any element - O(1)
 
 2nd method: binary exponentiation with mod inverse
 Factorials calculation - O(N)
-Getting C[n][k] - O(logN)
+Getting c[n][k] - O(log(Mod))
 
 ----------------------------------------------------*/
 
@@ -21,14 +21,14 @@ typedef long long ll;
 const int mod = 1e9 + 7;
 const int N = 5000;
 
-ll C[N][N], f[N];
+ll c[N][N], f[N];
 
 void pascal_precalc()            
 {                                   
 	for (int i = 0; i < N; i++) {                              
-		C[i][0] = 1, C[i][i] = 1;
+		c[i][0] = 1, c[i][i] = 1;
 		for (int j = 1; j < i; j++)
-			C[i][j] = (C[i - 1][j - 1] + C[i - 1][j]) % mod;
+			c[i][j] = (c[i - 1][j - 1] + c[i - 1][j]) % mod;
 	}
 }
 
@@ -50,8 +50,9 @@ ll binpow(ll a, ll n)
 	return res;
 }
 
-ll c(int n, int k)       
-{                        
+ll C(int n, int k)       
+{         
+	if (n < k) return 0;               
 	ll res = f[n];
 	res = (res * binpow(f[k], mod - 2)) % mod;
 	res = (res * binpow(f[n - k], mod - 2)) % mod;

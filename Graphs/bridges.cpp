@@ -3,7 +3,7 @@ using namespace std;
 
 const int N = 100100;
 vector<int> g[N];
-int tin[N], fup[N], timer;
+int n, tin[N], fup[N], timer;
 bool used[N];
 vector<pair<int, int> > bridges;
 

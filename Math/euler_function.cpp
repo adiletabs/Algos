@@ -6,7 +6,7 @@ Counts positive integers up to a given integer N
 that are relatively prime to N
 
 1st method: counting for only one given number - 
-get_phi(N) function
+euler(N) function
 Time complexity - O(sqrt(N))
 
 2nd method: precalculation for all numbers up to given N
@@ -18,19 +18,18 @@ Access to phi[i] - O(1)
 #include <bits/stdc++.h>
 using namespace std;
 
-int get_phi(int n)
+typedef long long ll;
+
+ll euler(ll n)
 {
-	int res = n, i = 2;
-	while (i * i <= n) {
+	ll res = n;
+	for (ll i = 2; i * i <= n; i++)
 		if (n % i == 0) {
 			while (n % i == 0)
 				n /= i;
 			res -= res / i;
 		}
-		i++;
-	}
-	if (n > 1)
-		res -= res / n;
+	if (n > 1) res -= res / n;
 	return res;
 }
 
