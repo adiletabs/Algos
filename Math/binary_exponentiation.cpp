@@ -16,7 +16,6 @@ const ll mod = 1e9 + 7;
 
 ll binpow(ll a, ll n)
 {
-	n %= (mod - 1);
 	ll res = 1;
 	while (n) {
 		if (n & 1) res = (res * a) % mod;
