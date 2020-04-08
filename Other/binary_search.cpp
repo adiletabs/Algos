@@ -3,7 +3,7 @@
 Classical binary search algorithm
 
 Checks wether number x is in the array
-Requres array to be sorted
+Requires array to be sorted
 
 Time complexity - O(logN)
 
