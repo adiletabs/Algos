@@ -18,5 +18,11 @@ int main()
             cout << *s.find_by_order(x) << '\n';
         else if (c == "order") 
             cout << s.order_of_key(x) << '\n';
+        else if (c == "lb")
+            cout << *s.lower_bound(x) << '\n';
+        else if (c == "ub")
+            cout << *s.upper_bound(x) << '\n';
+        else if (c == "erase")
+            s.erase(x);
     }
 }
