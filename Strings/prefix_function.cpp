@@ -3,12 +3,10 @@ using namespace std;
 
 typedef long long ll;
 
-vector<ll> prefix_function(string s)
-{
+vector<ll> prefix_function(string s) {
 	int n = (int)s.length();
 	vector<ll> pi (n);
-	for (int i = 1; i < n; i++)
-	{
+	for (int i = 1; i < n; i++) {
 		int j = pi[i - 1];
 		while (j > 0 && s[i] != s[j])
 			j = pi[j - 1];
@@ -19,8 +17,7 @@ vector<ll> prefix_function(string s)
 }
 
 // Knuth-Morris-Pratt algorithm
-vector<int> KMP(string s, string t)
-{
+vector<int> KMP(string s, string t) {
 	int m = (int)t.length();
 	vector<int> res;
 	string l = t + '#' + s;
@@ -32,12 +29,10 @@ vector<int> KMP(string s, string t)
 }
 
 // number of different substrings
-ll unique_subs(string s)
-{
+ll unique_subs(string s) {
 	ll res = 0;
 	string t = "";
-	for (int i = 0; i < s.length(); i++)
-	{
+	for (int i = 0; i < s.length(); i++) {
 		t += s[i];
 		reverse(t.begin(), t.end());
 		vector<int> pi = prefix_function(t);
@@ -51,8 +46,7 @@ ll unique_subs(string s)
 }
 
 // compressed representation of the string
-string compress(string s)
-{
+string compress(string s) {
 	vector<int> pi = prefix_function(s);
 	int n = (int)s.length();
 	int k = n - pi.back();
@@ -60,12 +54,10 @@ string compress(string s)
 }
 
 // get the string from the given prefix function
-string get(vector<int> pi)
-{
+string get(vector<int> pi) {
 	string ALPHA = "abcedfghijklmnopqrstuvwxyz", res = "";
 	int ind = 0;
-	for (int i = 0; i < pi.size(); i++)
-	{
+	for (int i = 0; i < pi.size(); i++) {
 		if (pi[i] == 0)
 			res += ALPHA[ind++];
 		else

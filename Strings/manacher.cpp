@@ -21,8 +21,7 @@ Time complexity - O(N)
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> odds(string s)    
-{                             
+vector<int> odds(string &s) {                             
 	int n = (int)s.length();
 	vector<int> d (n);
 	int l = 0, r = -1;
@@ -35,8 +34,7 @@ vector<int> odds(string s)
 	return d;
 }
 
-vector<int> evens(string s)  
-{                           
+vector<int> evens(string &s) {                           
 	int n = (int)s.length();
 	vector<int> d (n);
 	int l = 0, r = -1;
@@ -49,8 +47,7 @@ vector<int> evens(string s)
 	return d;
 }
 
-vector<string> get_palindromes(string s)
-{
+vector<string> get_palindromes(string &s) {
 	vector<int> o = odds(s);
 	vector<int> e = evens(s);
 	vector<string> res;
@@ -77,8 +74,7 @@ vector<string> get_palindromes(string s)
 	return res;
 }
 
-int main()
-{
+int main() {
 	string s;
 	cin >> s;
 	vector<string> p = get_palindromes(s);

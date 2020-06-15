@@ -167,8 +167,7 @@ public:
 	}
 };
 
-int main()
-{
+int main() {
 	BST<int> tree;
 	int T;
     while (T--) {

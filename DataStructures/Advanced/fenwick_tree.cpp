@@ -6,33 +6,25 @@ typedef long long ll;
 const int N = 100100;
 
 int n;
-ll a[N], fenw[N];
+ll a[N], f[N];
 
-void upd(int pos, ll x)
-{
-	while (pos <= n) {
-		fenw[pos] += x;
-		pos |= (pos + 1);
-	}
+void update(int pos, ll x) {
+	for (; pos <= n; pos |= (pos + 1))
+		f[pos] += x;
 }
 
-ll get(int r)
-{
+ll get(int r) {
 	ll res = 0;
-	while (r > 0) {
-		res += fenw[r];
-		r = (r & (r + 1)) - 1;
-	}
+	for (; r >= 1; r = (r & (r + 1)) - 1)
+		res += f[r];
 	return res;
 }
 
-ll get(int l, int r)
-{
+ll get(int l, int r) {
 	return get(r) - get(l - 1);
 }
 
-int main()
-{
+int main() {
 	cin >> n;
 	for (int i = 1; i <= n; i++) {
 		cin >> a[i];

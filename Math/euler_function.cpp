@@ -20,8 +20,7 @@ using namespace std;
 
 typedef long long ll;
 
-ll euler(ll n)
-{
+ll euler(ll n) {
 	ll res = n;
 	for (ll i = 2; i * i <= n; i++)
 		if (n % i == 0) {
@@ -36,8 +35,7 @@ ll euler(ll n)
 const int N = 100100;   
 int phi[N];      
                         
-void calc()            
-{                       
+void calc() {                       
     for (int i = 1; i < N; i++) 
         phi[i] = i; 
     for (int p = 2; p < N; p++) { 
@@ -49,8 +47,7 @@ void calc()
     }  
 }
 
-int main()
-{
+int main() {
 	calc();
 	int T;
 	cin >> T;

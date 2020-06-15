@@ -1,8 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<string> split(string s)   // separates string by spaces
-{
+vector<string> split(string s) {  // separates string by spaces
 	stringstream ss;
 	ss << s;
 	string token;
@@ -12,13 +11,12 @@ vector<string> split(string s)   // separates string by spaces
 	return res;
 }
 
-// separates string by some character
-// e.g.separation by comma ',':
-// input: "abc,def,ghi"
-// resulting vector: "abc", "def", "ghi"
+/* separates string by some character
+ e.g.separation by comma ',':
+ input: "abc,def,ghi"
+ resulting vector: "abc", "def", "ghi" */
 
-vector<string> split_by(string s, char c)
-{
+vector<string> split_by(string s, char c) {
 	stringstream ss;
 	ss << s;
 	string token;

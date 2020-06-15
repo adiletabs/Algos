@@ -7,8 +7,7 @@ vector<int> g[N], gr[N], order, comp;
 vector<vector<int> > strong_comps;
 bool used[N];
 
-void dfs1(int v)
-{
+void dfs1(int v) {
 	used[v] = true;
 	for (int to: g[v]) {
 		if (!used[to])
@@ -17,16 +16,14 @@ void dfs1(int v)
 	order.push_back(v);
 }
 
-void top_sort()
-{
+void top_sort() {
 	for (int i = 1; i <= n; i++)
 		if (!used[i])
 			dfs1(i);
 	reverse(order.begin(), order.end());
 }
 
-void dfs2(int v)
-{
+void dfs2(int v) {
 	used[v] = true;
 	comp.push_back(v);
 	for (int to: gr[v]) {
@@ -35,8 +32,7 @@ void dfs2(int v)
 	}
 }
 
-void go()
-{
+void go() {
 	top_sort();
 	memset(used, 0, sizeof used);
 	for (int i = 0; i < n; i++) {
@@ -49,8 +45,7 @@ void go()
 	}
 }
 
-int main()
-{
+int main() {
 	cin >> n >> m;
 	while (m--) {
 		int x, y;

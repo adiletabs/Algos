@@ -8,15 +8,13 @@ int dist[N], par[N], n, m;
 bool used[N];
 vector<int> path;
 
-void init(int s)
-{
+void init(int s) {
 	dist[s] = 0;
 	for (int i = 0; i < N; i++)
 		dist[i] = inf;
 }
 
-void dijkstra(int s)
-{
+void dijkstra(int s) {
 	init(s);
 	for (int i = 0; i < n; i++) {
 		int v = -1;
@@ -34,8 +32,7 @@ void dijkstra(int s)
 	}
 }
 
-void fast_dijkstra(int s)
-{
+void fast_dijkstra(int s) {
 	init(s);
 	set<pair<int, int> > best_vertices;
 	best_vertices.insert(make_pair(dist[s], s));
@@ -57,8 +54,7 @@ void fast_dijkstra(int s)
 	}
 }
 
-void get_best_path(int start, int target)
-{
+void get_best_path(int start, int target) {
 	fast_dijkstra(start);
 	for (int v = target; v != start; v = par[v])
 		path.push_back(v);
@@ -66,8 +62,7 @@ void get_best_path(int start, int target)
 	reverse(path.begin(), path.end());
 }
 
-int main()
-{
+int main() {
 	cin >> n >> m;
 	while (m--) {
 		int v, u, weight;

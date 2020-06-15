@@ -6,8 +6,7 @@ vector<int> g[N];
 bool used[N];
 int time_in[N], time_out[N], timer;
 
-void dfs(int v)
-{
+void dfs(int v) {
 	used[v] = true;
 	time_in[v] = ++timer;
 	for (int to: g[v]) 

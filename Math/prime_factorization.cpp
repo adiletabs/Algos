@@ -16,8 +16,7 @@ typedef long long ll;
 
 unordered_map<ll, int> primes;
 
-void fact(ll n)
-{
+void fact(ll n) {
 	primes.clear();
 	for (ll i = 2; i * i <= n; i++) {
 		while (n % i == 0) {

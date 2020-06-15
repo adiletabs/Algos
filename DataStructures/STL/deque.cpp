@@ -1,8 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct Node
-{
+struct Node {
 	int value;
 	Node *prev;
 	Node(int x) {
@@ -11,8 +10,7 @@ struct Node
 	}
 };
 
-struct DEQUE
-{
+struct DEQUE {
 	private:
 		Node *head = nullptr;
 		Node *tail = nullptr;
@@ -53,7 +51,7 @@ struct DEQUE
 		}
 
 		void reverse() {
-			Node * el = head;
+			Node *el = head;
 			head = tail;
 			tail = el;
 		}
@@ -63,8 +61,7 @@ struct DEQUE
 
 int q;
 
-int main()
-{
+int main() {
 	DEQUE dq;
 	cin >> q;
 	while (q--) {

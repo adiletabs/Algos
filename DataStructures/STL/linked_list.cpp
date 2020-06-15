@@ -1,8 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct Node
-{
+struct Node {
 	int val;
 	Node *next, *prev;
 	Node(int _val) {
@@ -12,8 +11,7 @@ struct Node
 	}
 };
 
-struct LinkedList
-{
+struct LinkedList {
 	public:
 		Node *head, *tail;
 		
@@ -108,8 +106,7 @@ struct LinkedList
 		}
 };
 
-int main()
-{
+int main() {
 	int n, x;
 	auto ll = new LinkedList();
 	cin >> n;

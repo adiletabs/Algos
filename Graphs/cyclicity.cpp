@@ -5,8 +5,7 @@ const int N = 100100;
 int start, finish, col[N], path[N];
 vector<int> g[N];
 
-bool dfs(int v)                // directed graph
-{
+bool dfs(int v) {                // directed graph
 	col[v] = 1;
 	for (int to: g[v]) {
 		if (col[to] == 1) {
@@ -24,8 +23,7 @@ bool dfs(int v)                // directed graph
 	return false;
 }
 
-bool dfs(int v, int from)      // undirected graph
-{
+bool dfs(int v, int from) {     // undirected graph
 	col[v] = 1;
 	for (int to: g[v]) {
 		if (col[to] == 1 && to != from) {
@@ -42,8 +40,7 @@ bool dfs(int v, int from)      // undirected graph
 	return false;
 }
 
-void print()
-{
+void print() {
 	cout << "Cycle found!\n";
 	vector<int> cycle;
 	for (int v = finish; v != start; v = path[v])
@@ -54,8 +51,7 @@ void print()
 	exit(0);
 }
 
-int main()
-{
+int main() {
 	// read graph
 	for (int i = 1; i <= N; i++)
 		if (!col[i] && dfs(i, -1))

@@ -30,8 +30,7 @@ public:
         root = new Node();
     }
 
-    void insert(string &word) 
-	{
+    void insert(string &word) {
 	    Node *cur = root;
         for (char c: word) {
             int ind = c - 'a';
@@ -62,8 +61,7 @@ public:
         return true;
     } 
 
-    Node* remove(string &word, Node* node, int depth = 0) 
-    { 
+    Node* remove(string &word, Node* node, int depth = 0) { 
         if (!node) return nullptr; 
         if (depth == (int)word.size()) { 
             if (node->is_terminal) 
@@ -84,8 +82,7 @@ public:
     }
 };
 
-int main()
-{
+int main() {
 	Trie *trie = new Trie();
 	int T;
 	cin >> T;

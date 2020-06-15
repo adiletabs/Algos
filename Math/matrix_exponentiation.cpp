@@ -19,8 +19,7 @@ struct Matrix {
 	ll mat[Sz][Sz];
 };
 
-Matrix mult(Matrix a, Matrix b)
-{
+Matrix mult(Matrix a, Matrix b) {
 	Matrix res;
 	for (int i = 0; i < Sz; i++)
 		for (int j = 0; j < Sz; j++) {
@@ -34,8 +33,7 @@ Matrix mult(Matrix a, Matrix b)
 	return res;
 }
 
-Matrix unit()
-{
+Matrix unit() {
 	Matrix res;
 	for (int i = 0; i < Sz; i++)
 		for (int j = 0; j < Sz; j++)
@@ -43,8 +41,7 @@ Matrix unit()
 	return res;
 }
 
-Matrix binpow(Matrix base, ll n)
-{
+Matrix binpow(Matrix base, ll n) {
 	Matrix res = unit();
 	while (n) {
 		if (n & 1) res = mult(res, base);
@@ -54,8 +51,7 @@ Matrix binpow(Matrix base, ll n)
 	return res;
 }
 
-ll get_fibonacci(ll n)
-{
+ll get_fibonacci(ll n) {
 	Matrix P;
 	for (int i = 0; i < Sz; i++)
 		for (int j = 0; j < Sz; j++)
@@ -64,8 +60,7 @@ ll get_fibonacci(ll n)
 	return P.mat[1][0];
 }
 
-int main()
-{
+int main() {
 	int T;
 	cin >> T;
 	while (T--) {

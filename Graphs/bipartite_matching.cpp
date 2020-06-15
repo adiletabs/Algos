@@ -5,8 +5,7 @@ const int N = 160;
 int used[N], mt[N], tmr, ans;
 vector<int> g[N], p;
 
-bool kuhn(int v) 
-{
+bool kuhn(int v) {
     if (used[v] == tmr)
         return false;
     used[v] = tmr;
@@ -23,8 +22,7 @@ bool kuhn(int v)
     return false;
 }
 
-int main()
-{
+int main() {
 	// read graph
 	// check for bipartite
 	// put vertices of one part in vector p

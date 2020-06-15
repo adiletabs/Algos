@@ -5,8 +5,7 @@ const int N = 100100;
 vector<int> g[N];
 int col[N];
 
-bool dfs(int v, int cl)
-{
+bool dfs(int v, int cl) {
 	col[v] = 3 - cl;
 	for (int to: g[v]) {
 		if (col[to] == col[v])
@@ -17,8 +16,7 @@ bool dfs(int v, int cl)
 	return true;
 }
 
-int main()
-{
+int main() {
 	// read graph
 	for (int i = 1; i <= n; i++)
 		if (!col[i] && !dfs(i))

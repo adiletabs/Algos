@@ -14,8 +14,7 @@ typedef long long ll;
 
 vector<ll> primes;
 
-void sieve(ll n)
-{
+void sieve(ll n) {
 	if (n >= 2)
 		primes.push_back(2);
 	vector<bool> prime (n + 1, true);

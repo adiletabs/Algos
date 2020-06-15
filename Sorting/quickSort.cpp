@@ -13,8 +13,7 @@ using namespace std;
 const int N = 5000;
 int a[N];
 
-void quickSort(int l, int r)
-{
+void quickSort(int l, int r) {
 	int piv = a[(l + r) / 2];
 	int i = l, j = r;
 	while (i <= j) {
@@ -32,8 +31,7 @@ void quickSort(int l, int r)
     }
 } 
 
-int main()
-{   
+int main() {   
     cin >> n;
     for (int i = 0; i < n; i++)
         cin >> a[i];

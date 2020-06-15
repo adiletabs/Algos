@@ -13,8 +13,7 @@ using namespace std;
 const int N = 100100;
 int a[N], n;
  
-void merge(int l, int r) 
-{
+void merge(int l, int r) {
     int cur[r - l + 1], mid = l + r >> 1;
     int i = l, j = mid + 1, k = 0;
     while (i <= mid && j <= r) {
@@ -27,8 +26,7 @@ void merge(int l, int r)
         a[i] = cur[i - l];
 }
  
-void mergeSort(int l, int r) 
-{
+void mergeSort(int l, int r) {
     if (l < r) {
         int mid = l + r >> 1;
         mergeSort(l, mid);
@@ -37,8 +35,7 @@ void mergeSort(int l, int r)
     }
 }
 
-int main()
-{   
+int main() {   
     cin >> n;
     for (int i = 0; i < n; i++)
         cin >> a[i];

@@ -7,21 +7,18 @@ vector<pair<int, pair<int, int > > > g;
 vector<pair<int, int > > mst_edges;
 int par[N], weight;
 
-int get_set(int v)
-{
+int get_set(int v) {
 	return v == par[v] ? v : par[v] = get_set(par[v]);
 }
 
-void merge(int a, int b)
-{
+void merge(int a, int b) {
 	a = get_set(a);
 	b = get_set(b);
 	if (a != b)
 		par[b] = a;
 }
 
-void MST()
-{
+void MST() {
 	sort(g.begin(), g.end());
 	for (int i = 0; i < g.size(); i++) {
 		int a = g[i].second.first, b = g[i].second.second;
@@ -33,8 +30,7 @@ void MST()
 	}
 }
 
-int main()
-{
+int main() {
 	// read graph
 	MST();
 	printf("MST weight: %d\n", weight);

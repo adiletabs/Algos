@@ -9,13 +9,11 @@ Find: point of intersection of these lines
 #include <bits/stdc++.h>
 using namespace std;
 
-struct point
-{
+struct point {
 	double x, y;
 };
 
-point intersection(double a1, double b1, double c1, double a2, double b2, double c2)
-{
+point intersection(double a1, double b1, double c1, double a2, double b2, double c2) {
 	double x0, y0;
 	if (a1 == 0 && b2 == 0)
 	{

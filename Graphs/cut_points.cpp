@@ -7,8 +7,7 @@ vector<int> g[N], cut_points;
 int n, tin[N], fup[N], timer;
 bool used[N];
 
-void dfs(int v, int p = -1)
-{
+void dfs(int v, int p = -1) {
 	used[v] = true;
 	tin[v] = fup[v] = timer++;
 	int children = 0;
@@ -27,8 +26,7 @@ void dfs(int v, int p = -1)
 		cut_points.push_back(v);
 }
 
-int main()
-{
+int main() {
 	// read graph
 	for (int i = 1; i <= n; i++)
 		if (!used[i])

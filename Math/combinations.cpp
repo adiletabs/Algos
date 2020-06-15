@@ -19,28 +19,25 @@ using namespace std;
 typedef long long ll;
 
 const int mod = 1e9 + 7;
-const int N = 5000;
+const int N = 5050;
 
 ll c[N][N], f[N];
 
-void pascal_precalc()            
-{                                   
+void pascal_precalc() {                                   
 	for (int i = 0; i < N; i++) {                              
-		c[i][0] = 1, c[i][i] = 1;
+		c[i][0] = c[i][i] = 1;
 		for (int j = 1; j < i; j++)
 			c[i][j] = (c[i - 1][j - 1] + c[i - 1][j]) % mod;
 	}
 }
 
-void factorial_precalc()
-{
+void factorial_precalc() {
 	f[0] = 1;
 	for (int i = 1; i < N; i++)
 		f[i] = f[i - 1] * 1LL * i; 
 }
 
-ll binpow(ll a, ll n)
-{
+ll binpow(ll a, ll n) {
 	ll res = 1;
 	while (n) {
 		if (n & 1) res = (res * a) % mod;
@@ -50,8 +47,7 @@ ll binpow(ll a, ll n)
 	return res;
 }
 
-ll C(int n, int k)       
-{         
+ll C(int n, int k) {         
 	if (n < k) return 0;               
 	ll res = f[n];
 	res = (res * binpow(f[k], mod - 2)) % mod;

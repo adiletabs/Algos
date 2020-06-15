@@ -4,8 +4,7 @@ using namespace std;
 const int N = 100100;
 vector<int> g[N];
 
-void bfs(int v)
-{
+void bfs(int v) {
 	vector<bool> used(N);
 	used[v] = true;
 	queue<int> q;

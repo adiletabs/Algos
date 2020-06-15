@@ -14,8 +14,7 @@ typedef long long ll;
 
 const ll mod = 1e9 + 7;
 
-ll binpow(ll a, ll n)
-{
+ll binpow(ll a, ll n) {
 	ll res = 1;
 	while (n) {
 		if (n & 1) res = (res * a) % mod;
@@ -25,8 +24,7 @@ ll binpow(ll a, ll n)
 	return res;
 }
 
-int main()
-{
+int main() {
 	int T;
 	cin >> T;
 	while (T--) {

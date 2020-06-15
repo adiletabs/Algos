@@ -5,8 +5,7 @@ const int N = 100100;
 vector<int> g[N];
 int l, timer, time_in[N], time_out[N], up[N][20];    // up[i][j] - 2^j -th ancestor of i-th vertex
 
-void dfs(int v, int p = 0)
-{
+void dfs(int v, int p = 0) {
 	time_in[v] = ++timer;
 	up[v][0] = p;
 	for (int i = 1; i <= l; i++)
@@ -18,13 +17,11 @@ void dfs(int v, int p = 0)
 	time_out[v] = ++timer;
 }
 
-bool is_ancestor(int v, int u)
-{
-	return (time_in[v] <= time_in[u] && time_out[v] >= time_out[u]);
+bool is_ancestor(int v, int u) {
+	return time_in[v] <= time_in[u] && time_out[v] >= time_out[u];
 }
 
-int lca(int v, int u)
-{
+int lca(int v, int u) {
 	if (is_ancestor(v, u)) return v;
 	if (is_ancestor(u, v)) return u;
 	for (int i = l; i >= 0; i--)
@@ -33,8 +30,7 @@ int lca(int v, int u)
 	return up[v][0];
 }
 
-int main()
-{
+int main() {
 	int n, m;            // number of vertices and edges
 	cin >> n >> m;
 	while ((1 << l) <= n)  l++;

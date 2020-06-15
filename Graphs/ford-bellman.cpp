@@ -1,8 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct Edge
-{
+struct Edge {
 	int u, v, w;
 };
 
@@ -11,8 +10,7 @@ int n, m, from;
 vector<Edge> g;
 int path[N];
 
-void fb(int x)
-{
+void fb(int x) {
 	path[x] = 0;
 	for (int i = 0; i < n - 1; i++)
 		for (int j = 0; j < m; j++)
@@ -20,8 +18,7 @@ void fb(int x)
 				path[g[j].v] = min(path[g[j].v], path[g[j].u] + g[j].w);
 }
 
-int main()
-{
+int main() {
 	for (int i = 0; i < N; i++)
 		path[i] = inf;
 	cin >> n >> m;

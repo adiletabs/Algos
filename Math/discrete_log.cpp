@@ -15,8 +15,7 @@ typedef long long ll;
 
 const int mod = 1e9 + 7;
 
-ll binpow(ll a, ll n)
-{
+ll binpow(ll a, ll n) {
 	ll res = 1;
 	while (n) {
 		if (n & 1) res = (res * a) % mod;
@@ -26,8 +25,7 @@ ll binpow(ll a, ll n)
 	return res;
 }
 
-ll discr_log(ll a, ll b)
-{
+ll discr_log(ll a, ll b) {
 	ll n = (ll)sqrt(mod * 1.0) + 1;
 	ll an = binpow(a, n);
 	map<ll, ll> vals;
@@ -47,8 +45,7 @@ ll discr_log(ll a, ll b)
 	return -1;
 }
 
-int main()
-{
+int main() {
 	int T;
 	cin >> T;
 	while (T--) {

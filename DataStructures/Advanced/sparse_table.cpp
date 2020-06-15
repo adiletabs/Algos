@@ -7,8 +7,7 @@ const int LOG = 17;
 int n, a[N]; 
 int logs[N], table[N][LOG];
 
-void calc()
-{
+void calc() {
 	for (int i = 2; i < N; i++)
 		logs[i] = logs[i >> 1] + 1;
 	for (int i = 0; i < n; i++)
@@ -20,15 +19,13 @@ void calc()
 	}
 }
 
-int get(int l, int r)
-{
+int get(int l, int r) {
 	int p = logs[r - l + 1];
 	int len = 1 << p;
 	return min(table[l][p], table[r - len + 1][p]);
 }
 
-int main()
-{
+int main() {
 	cin >> n;
 	for (int i = 0; i < n; i++)
 		cin >> a[i];

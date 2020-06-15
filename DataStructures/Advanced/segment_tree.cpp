@@ -75,8 +75,7 @@ void add(int l, int r, int val, int v = 1, int tl = 1, int tr = n) {
 	t[v].min = min(t[v + v].min, t[v + v + 1].min);
 }
 
-int main()
-{
+int main() {
 	cin >> n;
 	for (int i = 1; i <= n; i++)
 		cin >> a[i];
@@ -102,8 +101,5 @@ int main()
 			cin >> l >> r >> val;
 			add(l, r, val);
 		}
-		for (int i = 1; i <= n; i++)
-			cout << getSum(i, i) << ' ';
-		cout << '\n';
 	}
 }

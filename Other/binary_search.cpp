@@ -16,8 +16,7 @@ const int N = 100100;
 
 int a[N];
 
-bool binary_search(int l, int r, int x)
-{
+bool binary_search(int l, int r, int x) {
 	while (l <= r) {
 		int mid = l + r >> 1;
 		if (a[mid] == x)

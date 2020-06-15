@@ -1,8 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> z_function(string s) 
-{
+vector<int> z_function(string s) {
 	int n = (int)s.length();
 	vector<int> z (n);
 	for (int i = 1, l = 0, r = 0; i < n; i++) {
@@ -17,8 +16,7 @@ vector<int> z_function(string s)
 }
 
 // get the string from given z-function
-string get(vector<int> z)
-{
+string get(vector<int> z) {
 	string ALPHA = "abcedfghijklmnopqrstuvwxyz", res = "";
 	int len = 0, ind = 0, j;
 	z[0] = 0;

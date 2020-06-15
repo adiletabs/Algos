@@ -4,8 +4,7 @@ using namespace std;
 const int N = 100100;
 
 template<typename T>
-class HEAP
-{
+class HEAP {
 	private:
 		int size;
 		T h[N];
@@ -110,8 +109,7 @@ class HEAP
 
 int a[N];
 
-int main()
-{
+int main() {
 	int n;
     cin >> n;
     for (int i = 0; i < n; i++)
