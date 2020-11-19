@@ -24,7 +24,7 @@ bool kuhn(int v) {
 
 int main() {
 	// read graph
-	// check for bipartite
+	// check for bipartition
 	// put vertices of one part in vector p
 	memset(mt, -1, sizeof mt);
 	for (int i: p) {

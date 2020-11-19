@@ -9,7 +9,7 @@
 # program needs less than one second to generate the list of hcn.
 from math import log
 
-MAXN = 10**18
+MAXN = 10 ** 18
 
 # Generates a list of the first primes (with product > MAXN).
 def gen_primes():
