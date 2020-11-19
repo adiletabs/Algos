@@ -15,8 +15,7 @@ public:
 
 class Trie {
 private:
-	bool is_empty(Node* node) 
-    { 
+	bool is_empty(Node *node) { 
         for (int i = 0; i < 26; i++) 
             if (node->son[i]) 
                 return false; 
@@ -61,7 +60,7 @@ public:
         return true;
     } 
 
-    Node* remove(string &word, Node* node, int depth = 0) { 
+    Node* remove(string &word, Node *node, int depth = 0) { 
         if (!node) return nullptr; 
         if (depth == (int)word.size()) { 
             if (node->is_terminal) 
