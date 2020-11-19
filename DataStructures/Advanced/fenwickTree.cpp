@@ -3,20 +3,20 @@ using namespace std;
 
 typedef long long ll;
 
-const int N = 100100;
+const int N = 200100;
 
 int n;
-ll a[N], f[N];
+ll a[N], t[N];
 
-void update(int pos, ll x) {
-	for (; pos <= n; pos |= (pos + 1))
-		f[pos] += x;
+void add(int pos, ll val) {
+	for (; pos <= n; pos |= pos + 1)
+		t[pos] += val;
 }
 
 ll get(int r) {
 	ll res = 0;
 	for (; r >= 1; r = (r & (r + 1)) - 1)
-		res += f[r];
+		res += t[r];
 	return res;
 }
 
@@ -28,23 +28,22 @@ int main() {
 	cin >> n;
 	for (int i = 1; i <= n; i++) {
 		cin >> a[i];
-		upd(i, a[i]);
+		add(i, a[i]);
 	}
 	int T;
 	cin >> T;
 	while (T--) {
-		string type;
-		cin >> type;
-		if (type == "get") {
+		string com;
+		cin >> com;
+		if (com == "sum") {
 			int l, r;
 			cin >> l >> r;
 			cout << get(l, r) << '\n';
-		} else if (type == "upd") {
+		} else if (com == "add") {
 			int pos;
-			ll x;
-			cin >> pos >> x;
-			upd(pos, x);
-			a[pos] += x;
+			ll val;
+			cin >> pos >> val;
+			add(pos, val);
 		}
 	}
 }
