@@ -24,9 +24,10 @@ void build(int v = 1, int tl = 1, int tr = n) {
 	}
 }
 
-void push(int v) {
-	t[v << 1] += memo[v];
-	t[v << 1 | 1] += memo[v];
+void push(int v, ll tl, ll tr) {
+	ll tm = tl + tr >> 1;
+	t[v << 1] += memo[v] * (tm - tl + 1);
+	t[v << 1 | 1] += memo[v] * (tr - tm);
 	mn[v << 1] += memo[v];
 	mn[v << 1 | 1] += memo[v];
 	memo[v << 1] += memo[v];
@@ -37,7 +38,7 @@ void push(int v) {
 ll getSum(int l, int r, int v = 1, int tl = 1, int tr = n) {
 	if (tl > r || tr < l) return 0;       
 	if (tl >= l && tr <= r) return t[v];
-	push(v);
+	push(v, tl, tr);
 	int tm = tl + tr >> 1;
 	ll leftSum = getSum(l, r, v << 1, tl, tm);
 	ll rightSum = getSum(l, r, v << 1 | 1, tm + 1, tr);
@@ -47,7 +48,7 @@ ll getSum(int l, int r, int v = 1, int tl = 1, int tr = n) {
 ll getMin(int l, int r, int v = 1, int tl = 1, int tr = n) {
 	if (tl > r || tr < l) return inf;       
 	if (tl >= l && tr <= r) return mn[v];
-	push(v);
+	push(v, tl, tr);
 	int tm = tl + tr >> 1;
 	ll leftMin = getMin(l, r, v << 1, tl, tm);
 	ll rightMin = getMin(l, r, v << 1 | 1, tm + 1, tr);
@@ -57,12 +58,12 @@ ll getMin(int l, int r, int v = 1, int tl = 1, int tr = n) {
 void add(int l, int r, ll val, int v = 1, int tl = 1, int tr = n) {
 	if (tl > r || tr < l) return;
 	if (tl >= l && tr <= r) {
-		t[v] += val;
+		t[v] += val * (tr - tl + 1);
 		mn[v] += val;
 		memo[v] += val;
 		return;
 	}
-	push(v);
+	push(v, tl, tr);
 	int tm = tl + tr >> 1;
 	add(l, r, val, v << 1, tl, tm);
 	add(l, r, val, v << 1 | 1, tm + 1, tr);
