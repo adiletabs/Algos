@@ -28,7 +28,7 @@ struct query {
 	}
 } q[N];
 
-int n, m, a[N], ans[N];
+int n, m, a[N], ans[N], res;
 
 void add(int pos) {
 	// implementation is specific for each problem

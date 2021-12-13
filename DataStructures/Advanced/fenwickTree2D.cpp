@@ -26,7 +26,7 @@ void add(int leftTopX, int leftTopY, int rightBottomX, int rightBottomY, ll val)
 ll get(int x, int y) {
     d[0] = d[1] = d[2] = d[3] = 0;
     for (int i = x; i > 0; i = (i & (i + 1)) - 1)
-    	for ( int j = y; j > 0; j = (j & (j + 1)) - 1)
+    	for (int j = y; j > 0; j = (j & (j + 1)) - 1)
         	for (int k = 0; k < 4; k++)
         		d[k] += t[i][j][k];	
     return d[0] * x * y + d[1] * x + d[2] * y + d[3];

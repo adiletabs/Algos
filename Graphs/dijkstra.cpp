@@ -9,9 +9,9 @@ bool used[N];
 vector<int> path;
 
 void init(int s) {
-	dist[s] = 0;
 	for (int i = 0; i < N; i++)
 		dist[i] = inf;
+	dist[s] = 0;
 }
 
 void dijkstra(int s) {
